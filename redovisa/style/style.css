@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    line-height: 1.4;
+    background: rgb(82, 228, 172);
+    font-family: sans-serif;
+}
+
+.main {
+    margin: 8px auto;
+    width: 96%;
+    max-width: 67rem;
+    background: #dce6e0;
+    padding: 8px;
+}
+
+.header {
+    background: rgb(127, 221, 185);
+    padding: 1rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-size: 2.1em;
+    margin-bottom: 1.68rem;
+    font-family: "Open Sans", serif;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 1.68rem;
+    font-family: "Smooch Sans", serif;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 1.68rem;
+}
+
+.nav {
+    font-size: 2em;
+    margin-bottom: 1.68rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 4px solid rgb(82, 228, 172);
+}
+
+.nav a {
+    color:rgba(95, 134, 21, 0.901);
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
