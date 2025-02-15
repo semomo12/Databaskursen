@@ -8,7 +8,7 @@ Version 3.0
 + changed DATETIME to DATE for some colunmns
 Version 2.0
 + changed table type to InnoDB
-+ added foreign keys for all tables 
++ added foreign keys for all tables
 *********************************************************************
 */
 
