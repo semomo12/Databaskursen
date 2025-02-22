@@ -77,3 +77,23 @@ SELECT
 SELECT akronym, fornamn, efternamn, prekomp, nukomp, diffkomp
  FROM v_lonerevision
  ORDER BY nukomp DESC, diffkomp DESC;
+
+-- tabell för kurs
+DROP TABLE IF EXISTS kurs;
+create table kurs (
+    kod CHAR(6) PRIMARY KEY NOT NULL,
+    namn VARCHAR(40),
+    poang	FLOAT,
+    niva	CHAR(3)
+);
+
+-- Tabell för kurstillfalle
+DROP TABLE IF EXISTS kurstillfalle;
+create table kurstillfalle(
+    id	INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    kurskod	CHAR(6) NOT NULL,
+    kursansvarig	CHAR(3) NOT NULL,
+    lasperiod	INT NOT NULL,
+    FOREIGN KEY (kurskod) REFERENCES kurs(kod),
+    FOREIGN KEY (kursansvarig) REFERENCES larare(akronym)
+);
