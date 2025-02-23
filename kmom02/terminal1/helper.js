@@ -21,9 +21,14 @@ function showAsTable(result) {
 
     // Add each teacher's information in the array
     for (const row of result) {
-         
-        tableContent.push([row.akronym, row.fornamn + " " + row.efternamn, row.avdelning, row.lon.toString(), row.kompetens.toString(), row.fodd.toString()]);
-         
+        tableContent.push([
+            row.akronym,
+            row.fornamn + " " + row.efternamn,
+            row.avdelning,
+            row.lon.toString(),
+            row.kompetens.toString(),
+            row.fodd.toString()
+        ]);
     }
     return table(tableContent);
 }

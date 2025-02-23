@@ -65,12 +65,16 @@
 <section>
 <h2>Kmom03</h2>
 
-<p>Några generella reflektioner på att skriva och jobba med menydrivna terminalprogram i JavaScript och Node.js?
-    Berätta om din kodstruktur i ditt terminalprogram mot databasen, är du nöjd eller ser du förbättringspotential?
-    Något att nämna kring det aktuella stycket i guiden skolan med till exempel outer joins och subqueries?
-    Hur gick det att jobba med ER-modelleringen, några reflektioner?
-    Fanns det några extra svårigheter/utmaningar du kämpade med i kursmomentet?
-    Vilken är din TIL för detta kmom?</p>
+<p>Att skapa ett menydrivet terminalprogram i JavaScript och Node.js är både flexibelt och utmanande. Eftersom vi tidigare har arbetat med liknande koncept i Python-kursen var det enklare att komma igång, då jag redan hade en grundläggande förståelse för hur funktioner och moduler hänger ihop. Vi använder async/await och Promises, vilket förenklar hanteringen av asynkrona operationer, men det kräver också en tydlig struktur för att undvika callback-helvetet.</p>
+<p>Jag skapade två JavaScript-filer samt en JSON-fil för konfigurationsinställningar kopplade till databasen. Programmet är uppdelat i två moduler: en som hanterar de olika kommandona och en som fungerar som huvudprogrammet och startar menyn. För att interagera med databasen använder jag en klass som sköter all databaslogik. Jag använder en switch-sats för att matcha och hantera olika kommandon. En förbättringsmöjlighet vore att lägga till valideringar för att hantera fel eller misslyckade operationer. Till exempel kan jag i kommandot &quot;nylon &lt;akronym&gt; &lt;lön&gt;&quot; säkerställa att lönen är ett nummer och att akronymen faktiskt finns i databasen.</p>
+
+<p>Outer joins och subqueries är kraftfulla verktyg för att hämta och kombinera data på avancerade sätt. Det var utmanande i början, men efter att ha arbetat med inner och outer joins några gånger blev det tydligare hur tabeller kan kopplas samman. Jag har även insett hur man kan skriva mer effektiva queries för att optimera prestandan i en applikation. Outer joins är särskilt användbara när man vill inkludera data även om ingen match finns i en annan tabell, vilket gör dem viktiga i rapportering och analys. Subqueries gör det möjligt att bryta ner komplexa frågor i mindre, mer hanterbara delar.</p>
+
+<p>ER-modellering är en viktig del av databasutvecklingen eftersom den ger en visuell representation av databasen och dess relationer. Att kunna visualisera kopplingarna mellan entiteterna är avgörande för kommande uppgifter. Jag lade ner många timmar på att designa och förstå strukturen för mitt projekt, men det var en nödvändig och värdefull investering.</p>
+
+<p>Att arbeta med menydrivna terminalprogram och strukturera koden var en utmaning eftersom det krävde tid för planering och organisering. ER-modelleringen var också tidskrävande, särskilt när det gällde att skapa och strukturera relationerna mellan entiteterna på ett korrekt sätt. Jag hade vissa svårigheter med att skapa tabellerna för kurser och kurstillfällen, men efter flera tester och justeringar fick jag det att fungera.</p>
+
+<p>Min största TIL från detta kursmoment är att jag har fått fördjupad kunskap inom flera områden. Jag har lärt mig hur man arbetar med outer joins och subqueries i SQL, samt fördelarna och utmaningarna med dem. Jag har även utvecklat min förståelse för switch-satsen och case-strukturen i JavaScript. Dessutom har jag fått en bättre inblick i hur man skapar och hanterar främmande nycklar samt referenser genom primärnycklar. Slutligen har jag lärt mig vikten av konceptuell modellering och hur det påverkar databasdesignen.</p>
 </section>
 </main>
 
