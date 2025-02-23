@@ -1,0 +1,23 @@
+@startuml steg4
+
+entity Customer {}
+entity Order {}
+entity Product {}
+entity Category {}
+entity Stock {}
+entity Order_Item {}
+entity Delivery {}
+entity Invoice {}
+entity Inventory_Event {}
+
+Customer -- Order
+Order -- Order_Item
+Order_Item -- Product
+Product -- Category
+Product -- Stock
+Order -- Invoice
+Order -- Delivery
+Inventory_Event -- Order
+Inventory_Event -- Invoice
+
+@enduml
