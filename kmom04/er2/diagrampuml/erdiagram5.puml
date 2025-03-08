@@ -1,0 +1,96 @@
+@startuml steg8
+
+entity Customer {
+    + KundID [PK]
+    --
+    Förnamn
+    Efternamn
+    E-post
+    Adress
+    Telefonnummer
+}
+
+entity Order {
+    + OrderID [PK]
+    --
+    KundID [FK]
+    Orderdatum
+    OrderStatus
+    Totalpris
+}
+
+entity Product {
+    + ProduktID [PK]
+    --
+    Produktnamn
+    Beskrivning
+    Pris
+    Lagerkvantitet
+}
+
+entity Category {
+    + KategoriID [PK]
+    --
+    Kategorinamn
+}
+
+entity Product_Category {
+    + ProduktID [PK, FK]
+    + KategoriID [PK, FK]
+}
+
+entity Stock {
+    + LagerID [PK]
+    --
+    ProduktID [FK]
+    Lagerkvantitet
+    Hyllplacering
+
+}
+
+entity Order_Item {
+    + OrderradID [PK]
+    --
+    OrderID [FK]
+    ProduktID [FK]
+    Antal
+    Pris
+}
+
+entity Delivery {
+    + LeveransID [PK]
+    --
+    OrderID [FK]
+    Leveransdatum
+    LeveransStatus
+}
+
+entity Invoice {
+    + FakturaID [PK]
+    --
+    OrderID [FK]
+    Faktureringsdatum
+    Totalpris
+}
+
+entity Inventory_Event {
+    + EventID [PK]
+    --
+    OrderID [FK]
+    FakturaID [FK]
+    Eventbeskrivning
+    Eventdatum
+}
+
+Customer ||--o{ Order : "1:N"
+Order ||--o{ Order_Item : "1:N"
+Order_Item }o--|| Product : "N:1"
+Product ||--o{ Stock : "1:N"
+Product ||--o{ Product_Category : "1:N"
+Category ||--o{ Product_Category : "1:N"
+Order ||--|| Invoice : "1:1"
+Order ||--o{ Delivery : "1:N"
+Inventory_Event }o--|| Order : "1:N"
+Inventory_Event }o--|| Invoice : "1:N"
+
+@enduml
