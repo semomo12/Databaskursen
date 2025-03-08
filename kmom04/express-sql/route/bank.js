@@ -32,7 +32,7 @@ router.get("/move-to-adam", async (req, res) => {
 
     data.res = await bank.MoveMoney("Eva", "Adam");
     if (data.res.transactionOk) {
-        data.message = `Tack Eva, jag fick 1,5 pengar!`;
+        data.message = `Hej Eva! Tack för att du flyttade 1.5 pengar till mig!\n Vänliga hälsningar,\nAdam!`;
     } else {
         data.message = `Eva har inte tillräckligt med pengar för att överföra till Adam`;
     }

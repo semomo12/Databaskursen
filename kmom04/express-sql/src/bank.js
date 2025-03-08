@@ -28,7 +28,6 @@ let db;
     let res;
 
     res = await db.query(sql, [table]);
-    //console.info(`SQL: ${sql} (${table}) got ${res.length} rows.`);
 
     return res;
 }
@@ -44,6 +43,7 @@ async function showBalance() {
 // Move money from one account to another.
 async function startTransaction(fromAccount, toAccount, amount) {
     let res = false;
+
 
     if (fromAccount.balance > amount) {
         let sql = `
@@ -74,8 +74,11 @@ async function startTransaction(fromAccount, toAccount, amount) {
 
 
 // Move money from one account to another.
-async function MoveMoney(from, to, amount = 1.5) {
-    if (amount < 0) amount = 0;
+async function MoveMoney(from, to, amount) {
+    amount = amount || 1.5;
+    if (amount < 0) {
+        amount = 0;
+    }
 
     const accounts = await findAllInTable("account");
     let fromAccount = accounts.find(acc => acc.name.toLowerCase() === from.toLowerCase());
