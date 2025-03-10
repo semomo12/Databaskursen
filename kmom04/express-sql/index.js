@@ -11,16 +11,12 @@ const routeBank = require("./route/bank.js");
 const routeIndex = require("./route/index.js");
 const middleware = require("./middleware/index.js");
 
-
-
 app.use(middleware.logIncomingToConsole);
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", routeIndex);
 app.use("/bank", routeBank);
 app.listen(port, logStartUpDetailsToConsole);
-
-
 
 function logStartUpDetailsToConsole() {
     let routes = [];

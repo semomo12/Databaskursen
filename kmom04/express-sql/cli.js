@@ -5,10 +5,13 @@
 
 // Read from commandline
 const readline = require("readline");
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+const rl = readline.createInterface(
+    {
+        input: process.stdin,
+        output: process.stdout,
+    }
+);
+
 const bank = require("./src/bank.js");
 
 
@@ -57,7 +60,7 @@ function showMenu() {
         `  help, menu ------------------> to show this menu.\n` +
         `  move ------------------------> Move 1.5 peng from Adam to Eva.\n` +
         `  move <amount> <from> <to> ---> Move amount peng from one person to another.\n`+
-        `  balance ---------------------> Overview of the accounts available and the account balance..\n`);
+        `  balance ---------------------> Overview of the account balance..\n`);
 }
 
 
@@ -109,12 +112,21 @@ async function handleInput(input) {
             }
 
             if (ok) {
-                let { fromAccount, toAccount, transactionOk } = await bank.MoveMoney(from, to, amount);
+                let { fromAccount, toAccount, transactionOk } =
+                    await bank.MoveMoney(from, to, amount);
+
                 if (transactionOk) {
-                    console.info(`(flytta ${amount} pengar från ${fromAccount.id} till ${toAccount.id}.)`);
-                    console.info(`${toAccount.name} fick ${amount} pengar, from ${fromAccount.name}.`);
+                    console.info(
+                        `(flytta ${amount} pengar från ${fromAccount.id} till ${toAccount.id}.)`
+                    );
+                    console.info(
+                        `${toAccount.name} fick ${amount} pengar, from ${fromAccount.name}.`
+                    );
                 } else {
-                    console.info(`${fromAccount.name} har ej tillräckligt med pengar att överföra till ${toAccount.name}`);
+                    console.info(
+                        `${fromAccount.name} har ej tillräckligt pengar att överföra ` +
+                        `till ${toAccount.name}`
+                    );
                 }
             }
             break;
@@ -122,7 +134,10 @@ async function handleInput(input) {
 
         case "balance": {
             let balance = await bank.showBalance();
-            console.info(`Adam har ${balance[0].balance} och Eva har ${balance[1].balance} pengar.`);
+
+            console.info(
+                `Adam har ${balance[0].balance} och Eva har ${balance[1].balance} pengar.`
+            );
             break;
         }
 

@@ -23,7 +23,8 @@ let db;
 
 
 // show in table
- async function findAllInTable(table) {
+
+async function findAllInTable(table) {
     let sql = `SELECT * FROM ??;`;
     let res;
 
@@ -44,24 +45,23 @@ async function showBalance() {
 async function startTransaction(fromAccount, toAccount, amount) {
     let res = false;
 
-
     if (fromAccount.balance > amount) {
         let sql = `
-        START TRANSACTION;
+            START TRANSACTION;
 
-        UPDATE account
-        SET
-            balance = balance - ?
-        WHERE
-            id = ?;
+            UPDATE account
+            SET
+                balance = balance - ?
+            WHERE
+                id = ?;
 
-        UPDATE account
-        SET
-            balance = balance + ?
-        WHERE
-            id = ?;
+            UPDATE account
+            SET
+                balance = balance + ?
+            WHERE
+                id = ?;
 
-        COMMIT;`;
+            COMMIT;`;
 
         res = await db.query(sql, [amount, fromAccount.id, amount, toAccount.id]);
         if (res) {
@@ -90,9 +90,6 @@ async function MoveMoney(from, to, amount) {
     }
     return { fromAccount, toAccount, transactionOk: false };
 }
-
-
-
 
 module.exports = {
     showBalance: showBalance,

@@ -5,7 +5,7 @@ const indexroutes = require("./router/indexroutes");
 const adminroutes = require("./router/adminroutes");
 
 
-function logger (req,res,next){
+function logger(req, res, next) {
     console.info(`${new Date().toLocaleString()} -Got request on ${req.path} (${req.method}).`);
     next();
 }
@@ -31,7 +31,7 @@ function logger (req,res,next){
 
 app.use(logger);
 app.use(indexroutes);
-app.use("/admin",adminroutes);
+app.use("/admin", adminroutes);
 
 app.listen(port, () => {
     console.log(`using port: ${port}`);
