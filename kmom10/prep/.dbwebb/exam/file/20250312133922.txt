@@ -1,0 +1,38 @@
+20250312133922
+.
+total 44
+drwxr-xr-x 3 semh24 semh24  4096 Mar 12 00:16 .dbwebb
+-rw-r--r-- 1 semh24 semh24 10871 Mar 12 13:36 INSTRUKTION_2021-03-24_hund.md
+-rw-r--r-- 1 semh24 semh24 10782 Mar 12 13:36 INSTRUKTION_2022-05-27_formogenhet.md
+-rw-r--r-- 1 semh24 semh24 10938 Mar 12 13:36 INSTRUKTION_2023-03-23_el.md
+-rw-r--r-- 1 semh24 semh24  3926 Mar 12 13:36 README_FIRST.md
+./.dbwebb
+total 4
+drwxr-xr-x 4 semh24 semh24 4096 Mar 12 13:36 exam
+./.dbwebb/exam
+total 12
+drwxr-xr-x 2 semh24 semh24 4096 Mar 12 13:39 file
+-rw-r--r-- 1 semh24 semh24   36 Mar 12 13:36 id.md
+drwxr-xr-x 2 semh24 semh24 4096 Mar 12 13:39 receipt
+./.dbwebb/exam/receipt
+total 36
+-rw-r--r-- 1 semh24 semh24 595 Mar 12 00:16 20250311231618.md
+-rw-r--r-- 1 semh24 semh24 595 Mar 12 00:19 20250312001941.md
+-rw-r--r-- 1 semh24 semh24 595 Mar 12 00:19 20250312001954.md
+-rw-r--r-- 1 semh24 semh24 686 Mar 12 13:36 20250312123628.md
+-rw-r--r-- 1 semh24 semh24 777 Mar 12 13:38 20250312123836.md
+-rw-r--r-- 1 semh24 semh24 868 Mar 12 13:39 20250312123917.md
+-rw-r--r-- 1 semh24 semh24 686 Mar 12 13:37 20250312133756.md
+-rw-r--r-- 1 semh24 semh24 777 Mar 12 13:38 20250312133844.md
+-rw-r--r-- 1 semh24 semh24 868 Mar 12 13:39 20250312133922.md
+./.dbwebb/exam/file
+total 36
+-rw-r--r-- 1 semh24 semh24  808 Mar 12 00:16 20250312001618.txt
+-rw-r--r-- 1 semh24 semh24  933 Mar 12 00:19 20250312001941.txt
+-rw-r--r-- 1 semh24 semh24 1060 Mar 12 00:19 20250312001954.txt
+-rw-r--r-- 1 semh24 semh24 1189 Mar 12 13:36 20250312133627.txt
+-rw-r--r-- 1 semh24 semh24 1315 Mar 12 13:37 20250312133756.txt
+-rw-r--r-- 1 semh24 semh24 1441 Mar 12 13:38 20250312133836.txt
+-rw-r--r-- 1 semh24 semh24 1567 Mar 12 13:38 20250312133844.txt
+-rw-r--r-- 1 semh24 semh24 1693 Mar 12 13:39 20250312133917.txt
+-rw-r--r-- 1 semh24 semh24 1234 Mar 12 13:39 20250312133922.txt
