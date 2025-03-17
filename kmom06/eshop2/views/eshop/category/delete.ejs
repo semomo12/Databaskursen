@@ -1,0 +1,20 @@
+<%- include("../partials/header", {title: title}); %>
+<div class="container my-3">
+    <div class="card my-5">
+        <h5 class="card-header">Delete category</h5>
+        <div class="card-body">
+            <form class="my-3" method="post" action="/eshop/category/delete">
+                <input type="hidden" id="id" name="id" value="<%= res.category_id %>" />
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="category_name" name="category_name" aria-describedby="category_name" value="<%= res.category_name %>" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>

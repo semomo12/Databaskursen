@@ -1,0 +1,33 @@
+"product_id","product_name","description","price","stock_quantity","created","updated","deleted"
+"1","Fuze Tea Persika","Persika smak av Is-te","20.00","100","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"2","Lemon Iste","Fräsch Lemon Is-te","18.50","150","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"3","Ice Tea Lemon","Is-te med smak av Lemon","21.00","120","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"4","Ginger Lemon Tea","Ginger Lemon Is-te","22.00","80","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"5","Cold Brew Coffee","Långsam bryggd kaffe, kall","25.00","200","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"6","Nocco BCAA - Tropical","Nocco BCAA med tropisk smak","22.00","250","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"7","Celsius - Peach","Celsius energidryck med persikosmak","25.00","250","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"8","Espresso Iced Coffee","Kall espresso kaffe","23.00","130","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"9","Cold Brew Lemonade","Lemonad med kallbryggt kaffe","24.00","70","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"10","Ginger Ale","Kaffeliknande, ingefära och kolsyrad","19.00","50","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"11","Nocco BCAA - Citrus","Nocco BCAA med frisk citrussmak","22.00","250","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"12","Vatten - Ljus Citron","Friskt citronvatten utan tillsatt socker","18.00","300","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"13","Mango-Passionsmoothie","Exotisk mango och passionssmoothie","30.00","150","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"14","Blåbärssmoothie","Smoothie med blåbär","28.50","130","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"15","Mango Smoothie","Mangosmoothie","27.00","110","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"16","Strawberry Kiwi Smoothie","Jordgubb och kiwi smoothie","28.00","140","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"17","Celsius - Tropical","Celsius energidryck med tropisk smak","25.00","250","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"18","Acai Smoothie","Acai smoothie med bär","32.00","90","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"19","Berry Blast","Bärsmoothie med olika bär","29.50","120","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"20","Peach Smoothie","Persikosmoothie","25.00","150","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"21","Tropical Smoothie","Tropisk smoothie med ananas och kokos","30.00","130","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"22","Apelsinjuice","Fräsch apelsinjuice","15.50","180","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"23","Äppeljuice","Fruktig äppeljuice","14.50","160","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"24","Tropisk Juice","Exotisk tropisk juice","16.00","140","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"25","Orange Juice","Färskpressad apelsinjuice","15.00","200","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"26","Kokosvatten","Friskt kokosvatten","20.00","100","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"27","Hallonsaft Light","Lätt Hallonsaft","18.00","150","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"28","Fläderblomssaft","Fräsch Fläderblomssaft","19.50","120","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"29","Körsbärssaft","Körsbärssaft med sockerfritt alternativ","17.00","110","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"30","Protein Shake - Vanilla","Vaniljproteinshake","25.00","200","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"31","Protein Shake - Chocolate","Chokladproteinshake","25.00","180","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL
+"32","Protein Shake - Strawberry","Jordgubbsproteinshake","25.00","200","2025-03-15 10:00:00","2025-03-15 10:00:00",NULL

@@ -1,0 +1,39 @@
+<%- include("../partials/header", {title: title}); %>
+<div class="container my-3">
+    <a href="/eshop/product/create" class="btn btn-primary btn-sm my-4" style="max-width: 200px">Create product</a>
+    <nav class="custom-heading">
+    <h1 class="my-3">Products</h1></nav>
+    <div class="table-responsive">
+        <table class="table my-4">
+            <thead class="table-info">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody class="border align-middle">
+                <% for (const row of res) { %>
+                <tr>
+                    <td><%= row.product_name %></td>
+                    <td><%= row.description %></td>
+                    <td class=""><%= row.price %></td>
+                    <td class=""><%= row.stock_quantity %></td>
+                    <td class="text-center">
+                        <a href="/eshop/product/edit/<%= row.product_id %>">
+                            <i class="fa fa-pencil-square-o me-3" aria-hidden="true"></i>
+                        </a>
+                        <a href="/eshop/product/delete/<%= row.product_id %>">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <% }; %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include("../partials/footer"); %>
+</div>

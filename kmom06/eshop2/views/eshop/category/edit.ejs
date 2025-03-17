@@ -1,0 +1,23 @@
+<%- include("../partials/header", {title: title}); %>
+<div class="container my-3">
+    <div class="card my-5">
+        <h5 class="card-header">Edit Category</h5>
+        <div class="card-body">
+            <form class="my-3" method="post" action="/eshop/category/edit">
+                <input type="hidden" id="id" readonly name="id" value="<%= res.category_id %>" />
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="name" value="<%= res.name %>" />
+                </div>
+                <% if (edited){ %>
+                <p>Category is updated.</p>
+                <a href="/eshop/category" class="btn btn-primary me-3">Back</a>
+                <% }; %>
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>
