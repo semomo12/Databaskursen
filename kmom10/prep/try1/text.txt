@@ -1,0 +1,31 @@
+mariadb --table < dml.sql
+
+mariadb exam --table -e "SHOW TABLES;"
+
+
+
+
+ dbwebb update
+ Seyed Mostafa Mohseni
+ semh24@student.bth.se
+
+
+dbwebb exam checkout try1
+dbwebb validate try1
+dbwebb exam receipt try1
+
+
+bash download-exam-csv.bash
+
+
+
+
+
+
+
+
+bash backup.bash
+bash verify.bash
+
+dbwebb exam seal try1
+
