@@ -1,0 +1,7 @@
+{
+    "host":     "semomo.local",
+    "user":     "dbadm",
+    "password": "P@ssw0rd",
+    "database": "eshop",
+    "multipleStatements": true
+}

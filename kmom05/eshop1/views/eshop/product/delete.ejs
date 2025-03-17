@@ -1,0 +1,34 @@
+<%- include("../partials/header", {title: title}); %>
+<div class="container my-3">
+    <div class="card my-5">
+        <h5 class="card-header">Delete product</h5>
+        <div class="card-body">
+            <form class="my-3" method="post" action="/eshop/product/delete">
+                <input type="hidden" id="id" name="id" readonly value="<%= res.product_id %>" />
+
+                <div class="mb-3">
+                    <label for="product_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" readonly name="name" id="product_name" aria-describedby="product_name" value="<%= res.product_name %>" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" readonly name="description" id="description" description="description" aria-describedby="description" value="<%= res.description %>" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" readonly name="price" id="price" price="price" aria-describedby="price" value="<%= res.price %>" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="stock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" readonly name="stock" id="stock" stock="stock" aria-describedby="stock" value="<%= res.stock || 0  %>" />
+                </div>
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>

@@ -17,8 +17,72 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `kraftverk`
+--
+
+DROP TABLE IF EXISTS `kraftverk`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `kraftverk` (
+  `kraftverk_id` varchar(10) NOT NULL,
+  `namn` varchar(100) NOT NULL,
+  `plats` varchar(100) NOT NULL,
+  `kalla` varchar(50) NOT NULL,
+  `effekt` decimal(10,2) NOT NULL,
+  `nyttjandegrad` decimal(5,2) NOT NULL,
+  `startad` int(11) NOT NULL,
+  `stangd` int(11) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`kraftverk_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `kraftverk`
+--
+
+LOCK TABLES `kraftverk` WRITE;
+/*!40000 ALTER TABLE `kraftverk` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kraftverk` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `kraftverk_arproduktion`
+--
+
+DROP TABLE IF EXISTS `kraftverk_arproduktion`;
+/*!50001 DROP VIEW IF EXISTS `kraftverk_arproduktion`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `kraftverk_arproduktion` AS SELECT
+ 1 AS `kraftverk_id`,
+  1 AS `namn`,
+  1 AS `effekt`,
+  1 AS `nyttjandegrad`,
+  1 AS `arsproduktion_kWh` */;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Dumping routines for database 'exam'
 --
+
+--
+-- Final view structure for view `kraftverk_arproduktion`
+--
+
+/*!50001 DROP VIEW IF EXISTS `kraftverk_arproduktion`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb3 */;
+/*!50001 SET character_set_results     = utf8mb3 */;
+/*!50001 SET collation_connection      = utf8mb3_uca1400_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`dbadm`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `kraftverk_arproduktion` AS select `k`.`kraftverk_id` AS `kraftverk_id`,`k`.`namn` AS `namn`,`k`.`effekt` AS `effekt`,`k`.`nyttjandegrad` AS `nyttjandegrad`,`k`.`effekt` * 365 * `k`.`nyttjandegrad` / 100 AS `arsproduktion_kWh` from `kraftverk` `k` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -29,4 +93,4 @@
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-12 15:24:51
+-- Dump completed on 2025-03-14 15:59:09

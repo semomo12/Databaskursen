@@ -1,0 +1,33 @@
+<%- include("../partials/header", {title: title}); %>
+<div class="container my-3">
+    <a href="/eshop/category/create" class="btn btn-primary btn-sm my-4" style="max-width: 170px">Create category</a>
+    <nav class="custom-heading">
+    <h1 class="my-3">Categories</h1></nav>
+    <div class="table-responsive">
+        <table class="table my-4 shadow-sm p-3 bg-white rounded table-hover rounded-3 overflow-hidden w-100">
+            <thead class="table-info">
+                <tr>
+                    <th>Name</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody class="border align-middle">
+                <% for (const row of res) { %>
+                <tr>
+                    <td><%= row.category_name %></td>
+                    <td class="text-center w-25 display-flex justify-content-around">
+                        <a href="/eshop/category/edit/<%= row.category_id %>">
+                            <i class="fa fa-pencil-square-o me-3" aria-hidden="true"></i>
+                        </a>
+                        <a href="/eshop/category/delete/<%= row.category_id %>">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <% }; %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include("../partials/footer"); %>
+</div>

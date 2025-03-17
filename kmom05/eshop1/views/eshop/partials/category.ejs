@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<h1>Product</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    <% for (const row of res) { %>
+    <tr>
+        <td><%= row.name %></td>
+        <td class="right">
+            <a href="/eshop/product/edit/<%= row.category_id %>">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+            <a href="/eshop/product/delete/<%= row.category_id %>">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </a>
+        </td>
+    </tr>
+
+    <% }; %>
+</table>
+
+<%- include("footer"); %>

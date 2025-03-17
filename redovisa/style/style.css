@@ -77,3 +77,15 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+body footer {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(28, 174, 106);
+    margin-top: auto;
+  }
+  body footer p {
+    margin-top: auto;
+  }

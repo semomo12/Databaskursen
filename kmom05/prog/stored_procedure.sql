@@ -1,7 +1,7 @@
 --
 -- https:;;dbwebb.se/kunskap/lagrade-procedurer-i-databas
 -- Example transactions
--- 
+--
 DROP TABLE IF EXISTS account;
 CREATE TABLE account
 (
@@ -23,18 +23,18 @@ SELECT * FROM account;
 --
 -- Move the money
 --
-UPDATE account 
+UPDATE account
 SET
     balance = balance + 1.5
 WHERE
     id = '2222';
 
-UPDATE account 
+UPDATE account
 SET
     balance = balance - 1.5
 WHERE
     id = '1111';
-    
+
 SELECT * FROM account;
 
 
@@ -43,18 +43,18 @@ SELECT * FROM account;
 --
 START TRANSACTION;
 
-UPDATE account 
+UPDATE account
 SET
     balance = balance + 1.5
 WHERE
     id = '2222';
 
-UPDATE account 
+UPDATE account
 SET
     balance = balance - 1.5
 WHERE
     id = '1111';
-    
+
 COMMIT;
 
 SELECT * FROM account;
@@ -106,18 +106,18 @@ CREATE PROCEDURE move_money(
 BEGIN
     START TRANSACTION;
 
-    UPDATE account 
+    UPDATE account
     SET
     	balance = balance + amount
     WHERE
     	id = to_account;
 
-    UPDATE account 
+    UPDATE account
     SET
     	balance = balance - amount
     WHERE
     	id = from_account;
-        
+
     COMMIT;
 
     SELECT * FROM account;
@@ -154,13 +154,13 @@ BEGIN
         ROLLBACK;
         SELECT 'Amount on the account is not enough to make transaction.' AS message;
     ELSE
-        UPDATE account 
+        UPDATE account
             SET
                 balance = balance + amount
             WHERE
                 id = to_account;
 
-        UPDATE account 
+        UPDATE account
             SET
                 balance = balance - amount
             WHERE
