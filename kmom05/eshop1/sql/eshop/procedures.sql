@@ -283,6 +283,9 @@ CREATE PROCEDURE p_edit_category(
     IN the_name VARCHAR(100)
 )
 BEGIN
+    IF the_name IS NULL THEN
+        SET the_name = '';
+    END IF;
     UPDATE category SET category_name = the_name WHERE category_id = id AND deleted IS NULL;
 END;;
 DELIMITER ;
@@ -333,10 +336,16 @@ CREATE PROCEDURE p_edit_product(
     IN name VARCHAR(100),
     IN `description` TEXT,
     IN price DECIMAL(10,2),
-    IN stock INT
+    IN stock_quantity  INT
 )
 BEGIN
-    UPDATE product SET product_name = name, `description` = description, price = price, stock_quantity = stock WHERE product_id = id AND deleted IS NULL;
+    IF stock_quantity  IS NULL OR stock_quantity  = '' THEN
+        SET stock_quantity  = 0;
+    END IF;
+    IF price IS NULL OR price = '' OR price <= 0 THEN
+        SET price = 0.0;
+    END IF;
+    UPDATE product SET product_name = name, `description` = description, price = price, stock_quantity = stock_quantity  WHERE product_id = id AND deleted IS NULL;
 END;;
 DELIMITER ;
 

@@ -18,12 +18,12 @@
 
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" class="form-control" readonly name="price" id="price" price="price" aria-describedby="price" value="<%= res.price %>" />
+                    <input type="number" class="form-control" readonly name="price" id="price" price="price" aria-describedby="price" value="<%= res.price || 0 %>" />
                 </div>
 
                 <div class="mb-3">
                     <label for="stock" class="form-label">Stock</label>
-                    <input type="number" class="form-control" readonly name="stock" id="stock" stock="stock" aria-describedby="stock" value="<%= res.stock || 0  %>" />
+                    <input type="number" class="form-control" readonly name="stock" id="stock" stock="stock" aria-describedby="stock" value="<%= res.stock_quantity || 0  %>" />
                 </div>
                 <button type="submit" class="btn btn-primary">Delete</button>
             </form>

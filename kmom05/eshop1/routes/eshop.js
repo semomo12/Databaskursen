@@ -184,6 +184,18 @@ router.post("/product/create", urlencodedParser, async (req, res) => {
 
 router.post("/product/edit", urlencodedParser, async (req, res) => {
     let { id, name, description, price, stock } = req.body;
+
+    if (!name || name.trim() === '' && !description || description.trim() === '') {
+        name = '';
+        description = '';
+    }
+
+    if ((stock === '' || stock === undefined || isNaN(stock)) &&
+    (price === '' || price === undefined || isNaN(price))) {
+        stock = 0;
+        price = 0.0;
+    }
+
     const date = new Date();
     const formattedDate = eshop.formatDate(date);
     let eventDescription = `En uppdatering har genomförts på produkten med ID '${req.body.id}'`;

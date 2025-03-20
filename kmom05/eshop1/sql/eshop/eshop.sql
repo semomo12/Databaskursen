@@ -31,7 +31,7 @@ CREATE TABLE `category` (
   `deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`category_id`),
   UNIQUE KEY `category_name` (`category_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Is-te','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(2,'Kaffe','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(3,'Smoothies','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(4,'Juice','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(5,'Saft','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(6,'Alkoholfria Drycker','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(7,'Energidrycker','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(8,'Läsk','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(9,'ee','2025-03-17 15:19:34','2025-03-17 15:30:56','2025-03-17 15:30:56'),(10,'Proteindrycker','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(11,'rrrrr','2025-03-17 15:30:29','2025-03-17 15:30:40','2025-03-17 15:30:40');
+INSERT INTO `category` VALUES (1,'Is-te','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(2,'Kaffe','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(3,'Smoothies','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(4,'Juice','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(5,'Saft','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(6,'Alkoholfria Drycker','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(7,'Energidrycker','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(8,'Läsk','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(9,'Vatten','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(10,'Proteindrycker','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL);
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,7 +73,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Mikael','Roos','mikael.roos@email.com','Centrumgatan 1, 564 00 Bankeryd','070 42 42 42','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(2,'John','Doe','john.doe@email.com','Skogen 1, 555 55 Landet','070 555 555','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(3,'Jane','Doe','jane.doe@email.com','Skogen 1, 555 55 Landet','070 556 556','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(4,'Max','Mumin','mumintrollet.mumin@email.com','Blå hus 1, 111 11 Mumindalen','070 111 111','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(5,'Anna','Lund','anna.lund@email.com','Storgatan 10, 123 45 Ostersund','070 123 456','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(6,'Oskar','Berg','oskar.berg@email.com','Granvägen 22, 111 22 Karlskrona','070 789 012','2025-03-17 15:19:34','2025-03-17 15:19:34',NULL);
+INSERT INTO `customer` VALUES (1,'Mikael','Roos','mikael.roos@email.com','Centrumgatan 1, 564 00 Bankeryd','070 42 42 42','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(2,'John','Doe','john.doe@email.com','Skogen 1, 555 55 Landet','070 555 555','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(3,'Jane','Doe','jane.doe@email.com','Skogen 1, 555 55 Landet','070 556 556','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(4,'Max','Mumin','mumintrollet.mumin@email.com','Blå hus 1, 111 11 Mumindalen','070 111 111','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(5,'Anna','Lund','anna.lund@email.com','Storgatan 10, 123 45 Ostersund','070 123 456','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(6,'Oskar','Berg','oskar.berg@email.com','Granvägen 22, 111 22 Karlskrona','070 789 012','2025-03-18 21:22:59','2025-03-18 21:22:59',NULL);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `event_log` (
   `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +102,7 @@ CREATE TABLE `event_log` (
 
 LOCK TABLES `event_log` WRITE;
 /*!40000 ALTER TABLE `event_log` DISABLE KEYS */;
-INSERT INTO `event_log` VALUES (1,'abcd1234','Product added to inventory','2024-02-20 09:00:00','2024-02-20 09:00:00','2024-02-20 09:00:00',NULL),(2,'efgh5678','Product removed from inventory','2025-03-15 10:15:00','2025-03-15 10:15:00','2025-03-15 10:15:00',NULL),(3,'ijkl91011','Product stock updated','2025-03-15 11:00:00','2025-03-15 11:00:00','2025-03-15 11:00:00',NULL),(4,'mnop1213','Product price changed','2025-03-15 12:30:00','2025-03-15 12:30:00','2025-03-15 12:30:00',NULL),(5,'qrst1415','New product launched','2025-03-15 13:45:00','2025-03-15 13:45:00','2025-03-15 13:45:00',NULL),(6,'uvwx1617','Product stock updated','2025-03-15 14:00:00','2025-03-15 14:00:00','2025-03-15 14:00:00',NULL),(7,'76eee2cf-033c-11f0-a4db-105fad3b0320','Ny produkt lades till med produktid \"33\" och namn \"ee\".','2025-03-17 15:31:05','2025-03-17 15:31:05','2025-03-17 15:31:05',NULL),(8,'edfc6a1b-8af7-4005-8b6a-fd3fc716f61b','A new product was added with product ID \'undefined\'','2025-03-17 15:31:05','2025-03-17 15:31:05','2025-03-17 15:31:05',NULL),(9,'7a84ce90-033c-11f0-a4db-105fad3b0320','Detaljer om produktid \"33\" och namn \"ee\" uppdaterades.','2025-03-17 15:31:11','2025-03-17 15:31:11','2025-03-17 15:31:11',NULL),(10,'53083cb8-c22e-4852-ba82-eead684596d4','En uppdatering har genomförts på produkten med ID \'33\'','2025-03-17 15:31:11','2025-03-17 15:31:11','2025-03-17 15:31:11',NULL),(11,'7eb5486e-033c-11f0-a4db-105fad3b0320','Detaljer om produktid \"33\" och namn \"ee\" uppdaterades.','2025-03-17 15:31:19','2025-03-17 15:31:19','2025-03-17 15:31:19',NULL),(12,'e83c5912-5635-47e6-ba8a-da8fe4f9ca4e','en borttagning har genomförts på produkt ID \'33\'','2025-03-17 15:31:19','2025-03-17 15:31:19','2025-03-17 15:31:19',NULL);
+INSERT INTO `event_log` VALUES (1,'abcd1234','Product added to inventory','2024-02-20 09:00:00','2024-02-20 09:00:00','2024-02-20 09:00:00',NULL),(2,'efgh5678','Product removed from inventory','2025-03-15 10:15:00','2025-03-15 10:15:00','2025-03-15 10:15:00',NULL),(3,'ijkl91011','Product stock updated','2025-03-15 11:00:00','2025-03-15 11:00:00','2025-03-15 11:00:00',NULL),(4,'mnop1213','Product price changed','2025-03-15 12:30:00','2025-03-15 12:30:00','2025-03-15 12:30:00',NULL),(5,'qrst1415','New product launched','2025-03-15 13:45:00','2025-03-15 13:45:00','2025-03-15 13:45:00',NULL),(6,'uvwx1617','Product stock updated','2025-03-15 14:00:00','2025-03-15 14:00:00','2025-03-15 14:00:00',NULL);
 /*!40000 ALTER TABLE `event_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,1,'2025-03-15 10:00:00',45.00,'väntar','2025-03-15 10:00:00','2025-03-15 10:00:00',NULL,'2025-03-16 10:00:00'),(2,2,'2025-03-15 10:05:00',30.00,'bearbetas','2025-03-15 10:05:00','2025-03-15 10:05:00',NULL,NULL),(3,3,'2025-03-15 10:10:00',25.50,'Shipped','2025-03-15 10:10:00','2025-03-17 15:29:05',NULL,'2025-03-17 15:29:05'),(4,4,'2025-03-15 10:15:00',50.00,'avbruten','2025-03-15 10:15:00','2025-03-15 10:15:00',NULL,NULL),(5,5,'2025-03-15 10:20:00',40.75,'väntar','2025-03-15 10:20:00','2025-03-15 10:20:00',NULL,'2025-03-16 14:00:00'),(6,6,'2025-03-15 10:25:00',48.99,'slutförd','2025-03-15 10:25:00','2025-03-15 10:25:00',NULL,'2025-03-15 13:00:00');
+INSERT INTO `order` VALUES (1,1,'2025-03-15 10:00:00',45.00,'väntar','2025-03-15 10:00:00','2025-03-15 10:00:00',NULL,'2025-03-16 10:00:00'),(2,2,'2025-03-15 10:05:00',30.00,'bearbetas','2025-03-15 10:05:00','2025-03-15 10:05:00',NULL,NULL),(3,3,'2025-03-15 10:10:00',25.50,'slutförd','2025-03-15 10:10:00','2025-03-15 10:10:00',NULL,'2025-03-15 12:00:00'),(4,4,'2025-03-15 10:15:00',50.00,'avbruten','2025-03-15 10:15:00','2025-03-15 10:15:00',NULL,NULL),(5,5,'2025-03-15 10:20:00',40.75,'väntar','2025-03-15 10:20:00','2025-03-15 10:20:00',NULL,'2025-03-16 14:00:00'),(6,6,'2025-03-15 10:25:00',48.99,'slutförd','2025-03-15 10:25:00','2025-03-15 10:25:00',NULL,'2025-03-15 13:00:00');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,15 +182,15 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) NOT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `price` decimal(10,2) NOT NULL DEFAULT 0.00,
-  `stock_quantity` int(11) DEFAULT 0,
+  `price` decimal(10,2) DEFAULT NULL,
+  `stock_quantity` int(11) DEFAULT NULL,
   `created` datetime DEFAULT current_timestamp(),
   `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,7 +199,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Fuze Tea Persika','Persika smak av Is-te',20.00,100,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(2,'Lemon Iste','Fräsch Lemon Is-te',18.50,150,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(3,'Ice Tea Lemon','Is-te med smak av Lemon',21.00,120,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(4,'Ginger Lemon Tea','Ginger Lemon Is-te',22.00,80,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(5,'Cold Brew Coffee','Långsam bryggd kaffe, kall',25.00,200,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(6,'Nocco BCAA - Tropical','Nocco BCAA med tropisk smak',22.00,250,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(7,'Celsius - Peach','Celsius energidryck med persikosmak',25.00,250,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(8,'Espresso Iced Coffee','Kall espresso kaffe',23.00,130,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(9,'Cold Brew Lemonade','Lemonad med kallbryggt kaffe',24.00,70,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(10,'Ginger Ale','Kaffeliknande, ingefära och kolsyrad',19.00,50,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(11,'Nocco BCAA - Citrus','Nocco BCAA med frisk citrussmak',22.00,250,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(12,'Vatten - Ljus Citron','Friskt citronvatten utan tillsatt socker',18.00,300,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(13,'Mango-Passionsmoothie','Exotisk mango och passionssmoothie',30.00,150,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(14,'Blåbärssmoothie','Smoothie med blåbär',28.50,130,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(15,'Mango Smoothie','Mangosmoothie',27.00,110,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(16,'Strawberry Kiwi Smoothie','Jordgubb och kiwi smoothie',28.00,140,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(17,'Celsius - Tropical','Celsius energidryck med tropisk smak',25.00,250,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(18,'Acai Smoothie','Acai smoothie med bär',32.00,90,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(19,'Berry Blast','Bärsmoothie med olika bär',29.50,120,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(20,'Peach Smoothie','Persikosmoothie',25.00,150,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(21,'Tropical Smoothie','Tropisk smoothie med ananas och kokos',30.00,130,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(22,'Apelsinjuice','Fräsch apelsinjuice',15.50,180,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(23,'Äppeljuice','Fruktig äppeljuice',14.50,160,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(24,'Tropisk Juice','Exotisk tropisk juice',16.00,140,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(25,'Orange Juice','Färskpressad apelsinjuice',15.00,200,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(26,'Kokosvatten','Friskt kokosvatten',20.00,100,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(27,'Hallonsaft Light','Lätt Hallonsaft',18.00,150,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(28,'Fläderblomssaft','Fräsch Fläderblomssaft',19.50,120,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(29,'Körsbärssaft','Körsbärssaft med sockerfritt alternativ',17.00,110,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(30,'Protein Shake - Vanilla','Vaniljproteinshake',25.00,200,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(31,'Protein Shake - Chocolate','Chokladproteinshake',25.00,180,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(32,'Protein Shake - Strawberry','Jordgubbsproteinshake',25.00,200,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(33,'ee','eeee',3.00,3,'2025-03-17 15:31:05','2025-03-17 15:31:19','2025-03-17 15:31:19');
+INSERT INTO `product` VALUES (1,'Fuze Tea Persika','Persika smak av Is-te',20.00,100,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(2,'Lemon Iste','Fräsch Lemon Is-te',18.50,150,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(3,'Ice Tea Lemon','Is-te med smak av Lemon',21.00,120,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(4,'Ginger Lemon Tea','Ginger Lemon Is-te',22.00,80,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(5,'Cold Brew Coffee','Långsam bryggd kaffe, kall',25.00,200,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(6,'Nocco BCAA - Tropical','Nocco BCAA med tropisk smak',22.00,250,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(7,'Celsius - Peach','Celsius energidryck med persikosmak',25.00,250,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(8,'Espresso Iced Coffee','Kall espresso kaffe',23.00,130,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(9,'Cold Brew Lemonade','Lemonad med kallbryggt kaffe',24.00,70,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(10,'Ginger Ale','Kaffeliknande, ingefära och kolsyrad',19.00,50,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(11,'Nocco BCAA - Citrus','Nocco BCAA med frisk citrussmak',22.00,250,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(12,'Vatten - Ljus Citron','Friskt citronvatten utan tillsatt socker',18.00,300,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(13,'Mango-Passionsmoothie','Exotisk mango och passionssmoothie',30.00,150,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(14,'Blåbärssmoothie','Smoothie med blåbär',28.50,130,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(15,'Mango Smoothie','Mangosmoothie',27.00,110,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(16,'Strawberry Kiwi Smoothie','Jordgubb och kiwi smoothie',28.00,140,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(17,'Celsius - Tropical','Celsius energidryck med tropisk smak',25.00,250,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(18,'Acai Smoothie','Acai smoothie med bär',32.00,90,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(19,'Berry Blast','Bärsmoothie med olika bär',29.50,120,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(20,'Peach Smoothie','Persikosmoothie',25.00,150,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(21,'Tropical Smoothie','Tropisk smoothie med ananas och kokos',30.00,130,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(22,'Apelsinjuice','Fräsch apelsinjuice',15.50,180,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(23,'Äppeljuice','Fruktig äppeljuice',14.50,160,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(24,'Tropisk Juice','Exotisk tropisk juice',16.00,140,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(25,'Orange Juice','Färskpressad apelsinjuice',15.00,200,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(26,'Kokosvatten','Friskt kokosvatten',20.00,100,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(27,'Hallonsaft Light','Lätt Hallonsaft',18.00,150,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(28,'Fläderblomssaft','Fräsch Fläderblomssaft',19.50,120,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(29,'Körsbärssaft','Körsbärssaft med sockerfritt alternativ',17.00,110,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(30,'Protein Shake - Vanilla','Vaniljproteinshake',25.00,200,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(31,'Protein Shake - Chocolate','Chokladproteinshake',25.00,180,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(32,'Protein Shake - Strawberry','Jordgubbsproteinshake',25.00,200,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -271,7 +271,7 @@ CREATE TABLE `product_category` (
 
 LOCK TABLES `product_category` WRITE;
 /*!40000 ALTER TABLE `product_category` DISABLE KEYS */;
-INSERT INTO `product_category` VALUES (1,1,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(1,8,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(2,1,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(3,1,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(5,2,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(6,7,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(7,7,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(8,2,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(9,2,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(10,2,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(10,8,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(11,7,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(12,9,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(13,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(14,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(15,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(16,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(17,7,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(18,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(19,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(20,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(21,3,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(22,4,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(23,4,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(24,4,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(24,5,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(25,4,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(26,9,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(27,5,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(27,6,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(28,5,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(28,6,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(29,5,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(30,10,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(31,10,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(32,10,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL);
+INSERT INTO `product_category` VALUES (1,1,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(1,8,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(2,1,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(3,1,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(5,2,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(6,7,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(7,7,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(8,2,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(9,2,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(10,2,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(10,8,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(11,7,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(12,9,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(13,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(14,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(15,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(16,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(17,7,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(18,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(19,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(20,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(21,3,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(22,4,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(23,4,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(24,4,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(24,5,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(25,4,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(26,9,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(27,5,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(27,6,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(28,5,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(28,6,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(29,5,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(30,10,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(31,10,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(32,10,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL);
 /*!40000 ALTER TABLE `product_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -300,7 +300,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,'50',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(2,'75',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(3,'100',3,'2025-03-17 15:19:34','2025-03-17 15:28:22',NULL),(4,'125',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(5,'150',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(6,'175',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(7,'200',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(8,'225',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(9,'250',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(10,'275',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(11,'300',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(12,'325',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(13,'350',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(14,'375',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(15,'400',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(16,'425',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(17,'450',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(18,'475',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(19,'500',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(20,'525',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(21,'550',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(22,'575',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(23,'600',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(24,'625',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(25,'650',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(26,'675',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(27,'700',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(28,'725',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(29,'750',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(30,'775',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(31,'800',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL),(32,'850',0,'2025-03-17 15:19:34','2025-03-17 15:19:34',NULL);
+INSERT INTO `stock` VALUES (1,'50',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(2,'75',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(3,'100',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(4,'125',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(5,'150',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(6,'175',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(7,'200',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(8,'225',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(9,'250',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(10,'275',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(11,'300',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(12,'325',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(13,'350',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(14,'375',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(15,'400',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(16,'425',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(17,'450',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(18,'475',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(19,'500',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(20,'525',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(21,'550',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(22,'575',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(23,'600',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(24,'625',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(25,'650',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(26,'675',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(27,'700',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(28,'725',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(29,'750',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(30,'775',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(31,'800',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL),(32,'850',0,'2025-03-18 21:22:59','2025-03-18 21:22:59',NULL);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -629,6 +629,9 @@ CREATE DEFINER=`dbadm`@`%` PROCEDURE `p_edit_category`(
     IN the_name VARCHAR(100)
 )
 BEGIN
+    IF the_name IS NULL THEN
+        SET the_name = '';
+    END IF;
     UPDATE category SET category_name = the_name WHERE category_id = id AND deleted IS NULL;
 END ;;
 DELIMITER ;
@@ -651,10 +654,16 @@ CREATE DEFINER=`dbadm`@`%` PROCEDURE `p_edit_product`(
     IN name VARCHAR(100),
     IN `description` TEXT,
     IN price DECIMAL(10,2),
-    IN stock INT
+    IN stock_quantity  INT
 )
 BEGIN
-    UPDATE product SET product_name = name, `description` = description, price = price, stock_quantity = stock WHERE product_id = id AND deleted IS NULL;
+    IF stock_quantity  IS NULL OR stock_quantity  = '' THEN
+        SET stock_quantity  = 0;
+    END IF;
+    IF price IS NULL OR price = '' OR price <= 0 THEN
+        SET price = 0.0;
+    END IF;
+    UPDATE product SET product_name = name, `description` = description, price = price, stock_quantity = stock_quantity  WHERE product_id = id AND deleted IS NULL;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1140,4 +1149,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-17 15:31:55
+-- Dump completed on 2025-03-18 21:24:30

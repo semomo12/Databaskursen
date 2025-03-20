@@ -113,8 +113,17 @@ async function getProduct(id) {
 }
 
 
-
 async function editProduct(id, name, description, price, stock) {
+    if ((!name || name.trim() === '') && (!description || description.trim() === '')) {
+        name = '';
+        description = '';
+    }
+
+    if ((stock === '' || stock === undefined || isNaN(stock)) &&
+    (price === '' || price === undefined || isNaN(price))) {
+        stock = 0;
+        price = 0.0;
+    }
     let sql = `CALL p_edit_product(?, ?, ?, ?, ?);`;
 
     let res = await db.query(sql, [id, name, description, price, stock]);

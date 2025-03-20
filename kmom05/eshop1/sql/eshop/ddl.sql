@@ -29,10 +29,10 @@ CREATE TABLE customer (
 -- Produktregister
 CREATE TABLE product (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
-    product_name VARCHAR(255) NOT NULL,
+    product_name VARCHAR(255) DEFAULT NULL,
     `description` TEXT DEFAULT NULL,
-    price DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-    stock_quantity INT DEFAULT 0,
+    price DECIMAL(10,2) DEFAULT NULL,
+    stock_quantity INT DEFAULT NULL,
     created datetime DEFAULT current_timestamp(),
     updated datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     deleted datetime DEFAULT NULL
