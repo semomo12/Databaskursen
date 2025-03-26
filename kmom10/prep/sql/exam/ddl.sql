@@ -7,6 +7,7 @@ USE exam;
 -- Create the tables
 
 -- Skapa tabell för kraftverk
+DROP TABLE IF EXISTS kraftverk;
 CREATE TABLE kraftverk (
     kraftverk_id VARCHAR(10) PRIMARY KEY,
     namn VARCHAR(100) NOT NULL,
@@ -24,6 +25,7 @@ CREATE TABLE kraftverk (
 
 
 -- Skapa vy för att visa kraftverkens årsproduktion
+DROP VIEW IF EXISTS kraftverk_arproduktion;
 CREATE VIEW kraftverk_arproduktion AS
 SELECT
     k.kraftverk_id,
