@@ -13,7 +13,6 @@ SHOW TABLES;
 
 -- visa allt från tabellerna
 SELECT * FROM kraftverk;
-SELECT * FROM kraftverk_arproduktion;
 
 
 
@@ -31,7 +30,7 @@ WHERE TABLE_SCHEMA = 'exam';
 
 
 -- Visar relationer mellan tabeller genom primär- och främmande nycklar.
-SELECT TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME 
+SELECT TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME
 FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
 WHERE TABLE_SCHEMA = 'exam';
 
@@ -44,7 +43,8 @@ SHOW FULL TABLES WHERE TABLE_TYPE = 'VIEW';
 SHOW PROCEDURE STATUS WHERE Db = 'exam';
 
 -- Visar SQL-koden för den proceduren.
-SHOW CREATE PROCEDURE procedure_namn;
+SHOW CREATE PROCEDURE p_rapport1;
+SHOW CREATE PROCEDURE p_rapport2;
 
 
 -- lista över alla triggers

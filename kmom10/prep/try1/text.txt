@@ -4,33 +4,42 @@ mariadb exam --table -e "SHOW TABLES;"
 
 
 
- dbwebb update
- Seyed Mostafa Mohseni
- semh24@student.bth.se
 
+--starta tenta
+ dbwebb update
 
 dbwebb exam checkout try1
+Seyed Mostafa Mohseni
+semh24@student.bth.se
+
+
+--under tenta
 dbwebb validate try1
 dbwebb exam receipt try1
 
 
 
 --uppgift 1
-bash download-exam-csv.bash
+gå till filen bash download-exam-csv.bash
+
+mariadb
+source setup.sql
+source reset.sql
+
+
 
 
 bash backup.bash
 bash verify.bash
-
+--uppgit 2
 
 
 
 
 
 --klar
-dbwebb validate try1
 dbwebb test try1
-
+dbwebb validate try1
 
 bash backup.bash
 bash verify.bash
@@ -38,6 +47,11 @@ bash verify.bash
 
 
 dbwebb exam seal try1
+Seyed Mostafa Mohseni
+semh24@student.bth.se
+
+dbwebb exam receipt try1
+
 På canvas uppgift Tentamen skriv:
 "Klar!
 semh24"

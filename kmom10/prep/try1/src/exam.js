@@ -13,5 +13,26 @@ let db;
 })();
 
 
+async function showrapport() {
+    let sql = `CALL p_rapport();`;
 
-module.exports = {};
+    let res = await db.query(sql);
+
+    return res[0];
+}
+
+async function searchByString() {
+    let sql = `CALL p_rapport();`;
+
+    let res = await db.query(sql);
+
+    return res[0];
+}
+
+
+
+
+module.exports = {
+    showrapport: showrapport,
+    searchByString: searchByString,
+};

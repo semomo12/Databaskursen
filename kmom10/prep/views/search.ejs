@@ -1,0 +1,12 @@
+<%- include('header') %>
+
+<h1><%= title %></h1>
+
+<form action="/exam/search" method="POST">
+    <label for="searchStr">Sök efter kraftverk eller energikälla:</label>
+    <input type="text" id="searchStr" name="searchStr" required />
+    <button type="submit">Sök</button>
+
+</form>
+
+<%- include('footer') %>

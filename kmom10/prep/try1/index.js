@@ -2,12 +2,12 @@ const port    = process.env.DBWEBB_PORT || 1337;
 const express = require("express");
 const app  = express();
 const routeExam  = require("./routes/exam.js");
-const routeIndex  = require("./routes/home.js");
+const routeIndex  = require("./routes/index.js");
 
 
 
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use("/exam", routeExam);
 app.use("/", routeIndex);
 

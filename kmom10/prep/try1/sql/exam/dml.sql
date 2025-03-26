@@ -1,21 +1,25 @@
 
---terminalen:
---köra fil(under rätt katalog)
+-- terminalen:
+-- köra fil(under rätt katalog)
 mariadb --table < dml.sql
 
---köra sqlkod
+-- köra sqlkod
 mariadb exam --table -e "SHOW TABLES;"
 
 
 -- söka i backupfilen
 grep "SÖKORD" backup.sql
 
---lista alla csv filer
+-- lista alla csv filer
  ls -l -- *.csv
 
 
 SHOW DATABASES;
 SHOW TABLES;
+
+-- checka rätt data i tabell
+CONSTRAINT check_kolumnnaman CHECK (kolumnnaman >= testkonstroll)
+
 
 -- visa allt från tabellerna
 SELECT * FROM tabelnamn;
@@ -31,19 +35,12 @@ SELECT * FROM table_name WHERE condition1 OR condition2;
 SELECT * FROM table_name ORDER BY column_name ASC;  -- Ascendent (stigande)
 SELECT * FROM table_name ORDER BY column_name DESC; -- Desendent (fallande)
 
---samla rader från en kolumn, (COUNT(), SUM(), AVG())
+-- samla rader från en kolumn, (COUNT(), SUM(), AVG())
 SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name;
 
 SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name HAVING COUNT(*) > 10;
 
---union
-SELECT column_name FROM table1
-UNION
-SELECT column_name FROM table2;
 
--- join
-SELECT * FROM table1 t1
-JOIN table2 t2 ON t1.common_column = t2.common_column;
 
 -- unika värden
 SELECT DISTINCT column_name FROM table_name;
