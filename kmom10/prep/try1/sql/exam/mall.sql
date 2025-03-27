@@ -177,6 +177,19 @@ DELIMITER ;
 
 
 
+DROP TRIGGER IF EXISTS log_balance_update;
+CREATE TRIGGER log_balance_update
+AFTER UPDATE
+ON account FOR EACH ROW
+    INSERT INTO account_log (`what`, `account`, `balance`, `amount`)
+    VALUES ('trigger', NEW.id, NEW.balance, NEW.balance - OLD.balance);
+
+SHOW TRIGGERS;
+SHOW TRIGGERS LIKE 'account' \G;
+SHOW TRIGGERS FROM dbwebb \G;
+
+
+
 SELECT
     -- De kolumner som du vill gruppera efter
     column1,
@@ -207,3 +220,15 @@ ORDER BY
 -- När du behöver slå ihop kolumner eller värden i en rad.
 -- GROUP_CONCAT
 -- När du behöver slå ihop värden från flera rader i en grupp.
+
+SELECT
+    column1,
+    GROUP_CONCAT(column2 SEPARATOR ', ') AS concatenated_values
+FROM table_name
+GROUP BY column1;
+
+-- ta bort dubbletter
+GROUP_CONCAT(DISTINCT course SEPARATOR ', ')
+
+-- sortera inom group_concat
+GROUP_CONCAT(course ORDER BY course ASC SEPARATOR ', ')

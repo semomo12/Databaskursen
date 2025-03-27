@@ -91,9 +91,23 @@ CALL p_rapport1();
 
 
 
-
-
 -- procedurer
+
+DROP PROCEDURE IF EXISTS p_procedure_namn;
+DELIMITER ;;
+CREATE PROCEDURE p_procedure_namn()
+BEGIN
+    SELECT k.kolumn_namn, k.kolumn_namn, k.kolumn_namn
+    FROM table_name t
+    JOIN table_name t ON k.kolumn_namn = k.kolumn_namn;
+END;;
+DELIMITER ;
+
+
+
+
+
+
 
 --
 -- Create procedure for select * from tabell
@@ -151,28 +165,3 @@ END;;
 DELIMITER ;
 
 CALL p_show_tabellnamn();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-DROP PROCEDURE IF EXISTS p_procedure_namn;
-DELIMITER ;;
-CREATE PROCEDURE p_procedure_namn()
-BEGIN
-    SELECT k.kolumn_namn, k.kolumn_namn, k.kolumn_namn
-    FROM table_name t
-    JOIN table_name t ON k.kolumn_namn = k.kolumn_namn;
-END;;
-DELIMITER ;

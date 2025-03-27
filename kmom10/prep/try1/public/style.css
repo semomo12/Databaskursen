@@ -1,4 +1,74 @@
 
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    min-height: 100vh;
+    background-color: #f1f7ee;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+body footer {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(181, 243, 82);
+    margin-top: auto;
+    padding:0fr; /* Justera foterns padding för att göra den mindre */
+    font-size: 0.8em; /* Minska fontstorlek för fotern */
+  }
 
-/* <link rel="icon" href="favicon.ico"> */
+nav {
+    background: #333;
+    padding: 20px;
+    background-color: rgb(181, 243, 82);
+    text-decoration: underline;
+    text-align: center;
+    text-decoration-color: rgb(20, 20, 20);
+    text-shadow: 2px 2px 4px #afd8a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-stretch: narrower;
+}
+
+h1 {
+    font-size: 2.1em;
+    margin-bottom: ao;
+    font-family: "Open Sans", serif;
+    font-weight: 400;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: rgb(11, 17, 10);
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    overflow: visible;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}

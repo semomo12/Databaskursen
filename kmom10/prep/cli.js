@@ -1,8 +1,10 @@
 const mysql = require('mysql');
 const readline = require('readline');
 const config = require("./config/db/exam.json");
+// Importera util-modulen för att kunna använda promisify och skapa asynkrona funktioner
 const util = require('util');
 const connection = mysql.createConnection(config);
+// Använd util.promisify för att konvertera mysql.query till en asynkron funktion
 const queryAsync = util.promisify(connection.query).bind(connection);
 
 const rl = readline.createInterface({
@@ -44,7 +46,7 @@ function showMenu() {
 function handleChoice(choice) {
     const args = choice.split(' ');
 
-    choice = args[0];
+    choice = args[0];  // Få det första ordet som valet
 
     switch (choice) {
         case 'visa':
@@ -53,17 +55,20 @@ function handleChoice(choice) {
             break;
         case 'search':
             if (args.length > 1) {
-                let searchString = args.slice(1).join(' ');
+                 // Om det finns en söksträng, hämta den och sök
+                let searchString = args.slice(1).join(' ');// Sätt ihop alla delar av söksträngen
+
                 searchByString(searchString);
             } else {
+                // Om ingen söksträng anges, informera användaren
                 console.log("Please provide a search string after 'search'.");
                 showMenu();
             }
             break;
         case 'report':
-        showRapport3();
-        showMenu();
-             break;
+            showRapport3();
+            showMenu();
+            break;
         case 'menu':
         case 'help' :
             showMenu();
@@ -82,37 +87,51 @@ function handleChoice(choice) {
 
 async function showRapport() {
     try {
+        // Hämta rapport 1 från databasen
         const results = await queryAsync(`CALL p_rapport1_no_url;`);
+        // Hämta rapport 2 från databasen
         const results2 = await queryAsync(`CALL p_rapport2();`);
 
-
+        // Visa resultatet för kraftverk i tabellformat
         console.log('rapport kraftverk:');
         console.table(results[0]);
+
+        // Visa resultatet för konsumenter i tabellformat
         console.log('rapport konsument:');
         console.table(results2[0]);
+
+        // Visa huvudmenyn efter att rapporterna har visats
         showMenu();
     } catch (error) {
+        // Om det uppstår ett fel vid hämtning av rapporterna, logga felet
         console.error('Error to show rapports:', error);
         return;
     }
 }
 
+
 async function searchByString(searchStr) {
-    try{
-    const results = await queryAsync('CALL p_rapport_search(?);', [searchStr]);
+    try {
+        // Anropa den lagrade proceduren för att söka efter strängen i databasen
+        const results = await queryAsync('CALL p_rapport_search(?);', [searchStr]);
 
-    const resultSet = results[0];
+        const resultSet = results[0];
 
+        // Om inga resultat hittas, informera användaren
         if (resultSet.length === 0) {
             console.log('No matching items found.');
             showMenu();
             return;
         }
 
-        console.log(`sökresultat: ${searchStr}):`);
+        // Visa sökresultaten i tabellformat
+        console.log(`sökresultat: ${searchStr}:`);
         console.table(resultSet);
+
+        // Återgå till huvudmenyn
         showMenu();
     } catch (error) {
+        // Om det uppstår ett fel vid sökningen, logga felet
         console.error('Error searching:', error);
         return;
     }
@@ -124,7 +143,6 @@ async function searchByString(searchStr) {
 async function showRapport3() {
     try {
         const results = await queryAsync(`CALL p_rapport3();`);
-
 
         console.log('report:');
         console.table(results[0]);

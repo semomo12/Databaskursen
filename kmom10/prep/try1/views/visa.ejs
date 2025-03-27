@@ -1,0 +1,49 @@
+<%- include('header') %>
+
+<h1><%= title %></h1>
+
+<h2>Kraftverk</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Namn</th>
+        <th>Plats</th>
+        <th>Källa</th>
+        <th>Effekt</th>
+        <th>Typ</th>
+    </tr>
+    <% kraftverk.forEach(k => { %>
+        <tr>
+            <td><%= k.kraftverk_id %></td>
+            <td><a href="<%= k.kraftverk_url %>" target="_blank"><%= k.kraftverk_namn %></a></td>
+            <td><%= k.kraftverk_plats %></td>
+            <td><%= k.kraftverk_kalla %></td>
+            <td><%= k.kraftverk_effekt %></td>
+            <td><%= k.energikalla_typ %></td>
+        </tr>
+    <% }); %>
+</table>
+
+<h2>Konsumenter</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Namn</th>
+        <th>Ort</th>
+        <th>Årsbehov</th>
+        <th>Kraftkälla</th>
+        <th>Typ</th>
+    </tr>
+    <% konsumenter.forEach(c => { %>
+        <tr>
+            <td><%= c.konsument_id %></td>
+            <td><%= c.konsument_namn %></td>
+            <td><%= c.konsument_ort %></td>
+            <td><%= c.konsument_arsbehov %></td>
+            <td><%= c.konsument_kraftverk_kalla %></td>
+            <td><%= c.energikalla_typ %></td>
+        </tr>
+    <% }); %>
+</table>
+
+<%- include('footer') %>

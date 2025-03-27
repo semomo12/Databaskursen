@@ -43,7 +43,8 @@ router.post("/search", async (req, res) => {
     };
 
     // Hämta resultatet från databasen genom att anropa den uppdaterade searchByString-funktionen
-    data.res = await exam.searchByString(searchStr);  // Anropa funktionen för att hämta filtrerade resultat
+    data.res = await exam.searchByString(searchStr);
+    // Anropa funktionen för att hämta filtrerade resultat
     // Rendera resultatet i visa.ejs (rapporten)
     res.render("visa", {
         title: data.title,

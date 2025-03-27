@@ -28,8 +28,8 @@ SET FOREIGN_KEY_CHECKS = 1; -- aktiv
 -- Enable LOAD DATA LOCAL INFILE on the server.
 --
 
--- SET GLOBAL local_infile = 1;
--- SHOW VARIABLES LIKE 'local_infile';
+SET GLOBAL local_infile = 1;
+SHOW VARIABLES LIKE 'local_infile';
 
 --
 -- Insert into tables.

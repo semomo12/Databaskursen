@@ -1,0 +1,113 @@
+<%- include('header') %> <!-- Inkluderar header.ejs-fil, t.ex. för gemensam navigering eller layout -->
+
+<!-- Huvudrubrik för sidan -->
+<h1><%= title %></h1>
+
+<!-- Underrubrik för kraftverksektionen -->
+<h2>Kraftverk</h2>
+
+<!-- Skapar en tabell för att visa detaljer om kraftverk -->
+<table border="1">
+    <!-- Tabellens kolumnrubriker -->
+    <tr>
+        <th>ID</th>           <!-- Kraftverkets ID -->
+        <th>Namn</th>         <!-- Kraftverkets namn -->
+        <th>Plats</th>        <!-- Kraftverkets geografiska plats -->
+        <th>Källa</th>        <!-- Typ av energikälla (t.ex. vatten, vind, etc.) -->
+        <th>Effekt</th>       <!-- Effekt i megawatt (MW) -->
+        <th>Typ</th>          <!-- Typ av energikälla -->
+    </tr>
+
+    <!-- Loopar genom varje objekt i 'kraftverk' arrayen och skapar en rad för varje kraftverk -->
+    <% kraftverk.forEach(k => { %>
+        <tr>
+            <!-- Visar kraftverkets ID -->
+            <td><%= k.kraftverk_id %></td>
+
+            <!-- Visar kraftverkets namn som en länk som öppnas i en ny flik -->
+            <td><a href="<%= k.kraftverk_url %>" target="_blank"><%= k.kraftverk_namn %></a></td>
+
+            <!-- Visar kraftverkets plats -->
+            <td><%= k.kraftverk_plats %></td>
+
+            <!-- Visar energikällan som används i kraftverket -->
+            <td><%= k.kraftverk_kalla %></td>
+
+            <!-- Visar kraftverkets effekt -->
+            <td><%= k.kraftverk_effekt %></td>
+
+            <!-- Visar typen av energikälla -->
+            <td><%= k.energikalla_typ %></td>
+        </tr>
+    <% }); %>
+</table>
+
+<!-- Underrubrik för konsumentsektionen -->
+<h2>Konsumenter</h2>
+
+<!-- Skapar en tabell för att visa detaljer om konsumenter -->
+<table border="1">
+    <!-- Tabellens kolumnrubriker -->
+    <tr>
+        <th>ID</th>            <!-- Konsumentens ID -->
+        <th>Namn</th>          <!-- Konsumentens namn -->
+        <th>Ort</th>           <!-- Konsumentens plats/ort -->
+        <th>Årsbehov</th>      <!-- Konsumentens årsbehov av energi -->
+        <th>Kraftkälla</th>    <!-- Energi som konsumenten köper -->
+        <th>Typ</th>           <!-- Typ av energikälla -->
+    </tr>
+
+    <!-- Loopar genom varje objekt i 'konsumenter' arrayen och skapar en rad för varje konsument -->
+    <% konsumenter.forEach(c => { %>
+        <tr>
+            <!-- Visar konsumentens ID -->
+            <td><%= c.konsument_id %></td>
+
+            <!-- Visar konsumentens namn -->
+            <td><%= c.konsument_namn %></td>
+
+            <!-- Visar konsumentens ort -->
+            <td><%= c.konsument_ort %></td>
+
+            <!-- Visar konsumentens årsbehov av energi -->
+            <td><%= c.konsument_arsbehov %></td>
+
+            <!-- Visar den energikälla som konsumenten köper från -->
+            <td><%= c.konsument_kraftverk_kalla %></td>
+
+            <!-- Visar typen av energikälla som konsumenten använder -->
+            <td><%= c.energikalla_typ %></td>
+        </tr>
+    <% }); %>
+</table>
+
+<%- include('footer') %> <!-- Inkluderar footer.ejs-fil för att avsluta sidan och visa footer -->
+
+
+
+
+
+
+
+
+<!-- search -->
+
+
+<%- include('header') %> <!-- Inkluderar header.ejs-fil, t.ex. för gemensam navigering eller layout -->
+
+<!-- Huvudrubrik för sidan -->
+<h1><%= title %></h1>
+
+<!-- Skapar ett formulär för att söka efter kraftverk eller energikälla -->
+<form action="/exam/search" method="POST">
+    <!-- Label för sökfältet, förklarar vad användaren ska skriva -->
+    <label for="searchStr">Sök efter kraftverk eller energikälla:</label>
+
+    <!-- Textfält där användaren skriver sin söksträng -->
+    <input type="text" id="searchStr" name="searchStr" required />
+
+    <!-- Sökknapp som skickar formuläret -->
+    <button type="submit">Sök</button>
+</form>
+
+<%- include('footer') %> <!-- Inkluderar footer.ejs-fil för att avsluta sidan och visa footer -->

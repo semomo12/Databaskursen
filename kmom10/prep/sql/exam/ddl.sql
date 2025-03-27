@@ -101,8 +101,8 @@ BEGIN
     FROM konsument c
     JOIN konsument2kraftverk c2k ON c.id = c2k.konsument_id
     JOIN kraftverk k ON c2k.kraftverk_kalla = k.kalla
-    JOIN kraftverk2typ k2t ON k.id = k2t.kraftverk_id
-    JOIN typ t ON k2t.typ_id = t.id
+    LEFT JOIN kraftverk2typ k2t ON k.id = k2t.kraftverk_id
+    LEFT JOIN typ t ON k2t.typ_id = t.id
     GROUP BY c.id, c.namn, c.ort, c.arsbehov, k.kalla;
 END;;
 DELIMITER ;

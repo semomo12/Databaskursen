@@ -31,6 +31,7 @@ async function showRapport() {
 async function searchByString(searchStr) {
     let sql = `CALL p_rapport_search(?);`;
     let res = await db.query(sql, [searchStr]);
+
     return res[0];
 }
 

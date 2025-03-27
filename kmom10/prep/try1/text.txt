@@ -46,6 +46,8 @@ bash verify.bash
 
 
 
+
+
 dbwebb exam seal try1
 Seyed Mostafa Mohseni
 semh24@student.bth.se
@@ -62,3 +64,8 @@ semh24"
 --vid problem
 dbwebb upload
 mos@bth.se
+
+
+
+npm run eslint
+npm run eslint:fix

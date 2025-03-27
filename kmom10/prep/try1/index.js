@@ -4,10 +4,11 @@ const app  = express();
 const routeExam  = require("./routes/exam.js");
 const routeIndex  = require("./routes/index.js");
 
+app.use(express.urlencoded({ extended: true }));
 
 
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static("public"));
 app.use("/exam", routeExam);
 app.use("/", routeIndex);
 
