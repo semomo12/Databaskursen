@@ -1,0 +1,12 @@
+<%- include('header') %>
+
+<h1><%= title %></h1>
+
+<form action="/exam/search" method="POST">
+    <label for="searchStr">Search for minerals:</label>
+    <input type="text" id="searchStr" name="searchStr" required />
+    <button type="submit">Search</button>
+
+</form>
+
+<%- include('footer') %>

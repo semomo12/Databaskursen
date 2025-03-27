@@ -1,0 +1,26 @@
+<%- include('header') %>
+
+<h1><%= title %></h1>
+
+<h2>Minerals</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Uses</th>
+        <th>Type</th>
+        <th>Country</th>
+    </tr>
+    <% mineraler.forEach(m => { %>
+        <tr>
+            <td><%= m.mineral_id %></td>
+            <td><a href="<%= m.mineral_url %>" target="_blank"><%= m.mineral_name %></a></td>
+            <td><%= m.mineral_uses %></td>
+            <td><%= m.mineral_type %></td>
+            <td><%= m.country_name %></td>
+
+        </tr>
+    <% }); %>
+</table>
+
+<%- include('footer') %>

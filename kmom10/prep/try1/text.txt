@@ -6,7 +6,7 @@ mariadb exam --table -e "SHOW TABLES;"
 
 
 --starta tenta
- dbwebb update
+dbwebb update
 
 dbwebb exam checkout try1
 Seyed Mostafa Mohseni

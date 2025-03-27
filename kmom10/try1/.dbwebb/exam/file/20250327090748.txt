@@ -1,0 +1,22 @@
+20250327090748
+.
+total 20
+drwxr-xr-x 3 semh24 semh24  4096 Mar 27 09:07 .dbwebb
+-rw-r--r-- 1 semh24 semh24 10977 Mar 27 09:07 INSTRUKTION.md
+-rw-r--r-- 1 semh24 semh24  3926 Mar 27 09:07 README_FIRST.md
+./.dbwebb
+total 4
+drwxr-xr-x 4 semh24 semh24 4096 Mar 27 09:07 exam
+./.dbwebb/exam
+total 12
+drwxr-xr-x 2 semh24 semh24 4096 Mar 27 09:07 file
+-rw-r--r-- 1 semh24 semh24   36 Mar 27 09:07 id.md
+drwxr-xr-x 2 semh24 semh24 4096 Mar 27 09:07 receipt
+./.dbwebb/exam/receipt
+total 8
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 09:07 20250327080735.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 09:07 20250327090748.md
+./.dbwebb/exam/file
+total 8
+-rw-r--r-- 1 semh24 semh24 633 Mar 27 09:07 20250327090735.txt
+-rw-r--r-- 1 semh24 semh24 624 Mar 27 09:07 20250327090748.txt

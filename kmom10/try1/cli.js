@@ -1,10 +1,8 @@
 const mysql = require('mysql');
 const readline = require('readline');
 const config = require("./config/db/exam.json");
-// Importera util-modulen för att kunna använda promisify och skapa asynkrona funktioner
 const util = require('util');
 const connection = mysql.createConnection(config);
-// Använd util.promisify för att konvertera mysql.query till en asynkron funktion
 const queryAsync = util.promisify(connection.query).bind(connection);
 
 const rl = readline.createInterface({
@@ -32,10 +30,10 @@ function exitProgram(code) {
 
 
 function showMenu() {
-    console.log("\nWelcome to the program");
+    console.log("\nWelcome to the minerals");
     console.log('\nMenu:');
-    console.log('1. visa - Show reports for kraftverk and konsumenter');
-    console.log('2. search <searchString> - Search for kraftverk or energikälla');
+    console.log('1. visa - Show reports for minerals');
+    console.log('2. search <searchString> - Search for name,uses or country');
     console.log('3. report');
     console.log('\n4. help/menu - Show menu');
     console.log('5. exit - Exit the program');
@@ -46,7 +44,7 @@ function showMenu() {
 function handleChoice(choice) {
     const args = choice.split(' ');
 
-    choice = args[0];  // Få det första ordet som valet
+    choice = args[0];
 
     switch (choice) {
         case 'visa':
@@ -55,12 +53,10 @@ function handleChoice(choice) {
             break;
         case 'search':
             if (args.length > 1) {
-                // Om det finns en söksträng, hämta den och sök
-                let searchString = args.slice(1).join(' ');// Sätt ihop alla delar av söksträngen
+                let searchString = args.slice(1).join(' ');
 
                 searchByString(searchString);
             } else {
-                // Om ingen söksträng anges, informera användaren
                 console.log("Please provide a search string after 'search'.");
                 showMenu();
             }
@@ -87,56 +83,37 @@ function handleChoice(choice) {
 
 async function showRapport() {
     try {
-        // Hämta rapport 1 från databasen
-        const results = await queryAsync(`CALL p_rapport1_no_url;`);
-        // Hämta rapport 2 från databasen
-        const results2 = await queryAsync(`CALL p_rapport2();`);
+        const results = await queryAsync(`CALL p_rapport_no_url;`);
 
-        // Visa resultatet för kraftverk i tabellformat
-        console.log('rapport kraftverk:');
+        console.log('rapport mineraler:');
         console.table(results[0]);
-
-        // Visa resultatet för konsumenter i tabellformat
-        console.log('rapport konsument:');
-        console.table(results2[0]);
-
-        // Visa huvudmenyn efter att rapporterna har visats
         showMenu();
     } catch (error) {
-        // Om det uppstår ett fel vid hämtning av rapporterna, logga felet
         console.error('Error to show rapports:', error);
         return;
     }
 }
 
-
 async function searchByString(searchStr) {
     try {
-        // Anropa den lagrade proceduren för att söka efter strängen i databasen
         const results = await queryAsync('CALL p_rapport_search(?);', [searchStr]);
 
         const resultSet = results[0];
 
-        // Om inga resultat hittas, informera användaren
         if (resultSet.length === 0) {
             console.log('No matching items found.');
             showMenu();
             return;
         }
 
-        // Visa sökresultaten i tabellformat
-        console.log(`sökresultat: ${searchStr}:`);
+        console.log(`sökresultat: ${searchStr}):`);
         console.table(resultSet);
-
-        // Återgå till huvudmenyn
         showMenu();
     } catch (error) {
-        // Om det uppstår ett fel vid sökningen, logga felet
         console.error('Error searching:', error);
         return;
     }
 }
-
 
 
 
@@ -152,18 +129,3 @@ async function showRapport3() {
         return;
     }
 }
-
-
-
-// function cleanReport(reportData) {
-//     return reportData.map(row => {
-//         let cleanRow = { ...row }; // Kopiera objektet för att inte ändra originalet
-//         for (let key in cleanRow) {
-//             if (typeof cleanRow[key] === "string") {
-//                 // Ta bort webblänkar med en regex som matchar URL:er
-//                 cleanRow[key] = cleanRow[key].replace(/https?:\/\/[^\s]+/g, "[LÄNK BORTTAGEN]");
-//             }
-//         }
-//         return cleanRow;
-//     });
-// }

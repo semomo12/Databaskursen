@@ -1,0 +1,91 @@
+20250327135852
+.
+total 56
+drwxr-xr-x 3 semh24 semh24  4096 Mar 27 09:07 .dbwebb
+-rw-r--r-- 1 semh24 semh24 10977 Mar 27 09:07 INSTRUKTION.md
+-rw-r--r-- 1 semh24 semh24  3926 Mar 27 09:07 README_FIRST.md
+-rw-r--r-- 1 semh24 semh24  3233 Mar 27 12:55 cli.js
+drwxr-xr-x 3 semh24 semh24  4096 Mar 27 09:11 config
+drwxr-xr-x 2 semh24 semh24  4096 Mar 27 10:27 doc
+-rw-r--r-- 1 semh24 semh24  1141 Mar 27 09:11 index.js
+drwxr-xr-x 2 semh24 semh24  4096 Mar 27 09:11 public
+drwxr-xr-x 2 semh24 semh24  4096 Mar 27 09:11 routes
+drwxr-xr-x 3 semh24 semh24  4096 Mar 27 09:11 sql
+drwxr-xr-x 2 semh24 semh24  4096 Mar 27 09:11 src
+drwxr-xr-x 2 semh24 semh24  4096 Mar 27 11:27 views
+./public
+total 40
+-rw-r--r-- 1 semh24 semh24 32988 Mar 27 09:11 favicon.ico
+-rw-r--r-- 1 semh24 semh24  1345 Mar 27 12:35 style.css
+./config
+total 4
+drwxr-xr-x 2 semh24 semh24 4096 Mar 27 09:11 db
+./config/db
+total 4
+-rw-r--r-- 1 semh24 semh24 143 Mar 27 09:11 exam.json
+./.dbwebb
+total 4
+drwxr-xr-x 4 semh24 semh24 4096 Mar 27 09:07 exam
+./.dbwebb/exam
+total 12
+drwxr-xr-x 2 semh24 semh24 4096 Mar 27 13:58 file
+-rw-r--r-- 1 semh24 semh24   36 Mar 27 09:07 id.md
+drwxr-xr-x 2 semh24 semh24 4096 Mar 27 13:58 receipt
+./.dbwebb/exam/receipt
+total 36
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 09:07 20250327080735.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 09:07 20250327090748.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 13:02 20250327130245.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 13:25 20250327132507.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 13:44 20250327134415.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 13:48 20250327134817.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 13:56 20250327135623.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 13:57 20250327135718.md
+-rw-r--r-- 1 semh24 semh24 589 Mar 27 13:58 20250327135851.md
+./.dbwebb/exam/file
+total 36
+-rw-r--r-- 1 semh24 semh24  633 Mar 27 09:07 20250327090735.txt
+-rw-r--r-- 1 semh24 semh24  758 Mar 27 09:07 20250327090748.txt
+-rw-r--r-- 1 semh24 semh24 3080 Mar 27 13:02 20250327130246.txt
+-rw-r--r-- 1 semh24 semh24 3206 Mar 27 13:25 20250327132507.txt
+-rw-r--r-- 1 semh24 semh24 3332 Mar 27 13:44 20250327134415.txt
+-rw-r--r-- 1 semh24 semh24 3458 Mar 27 13:48 20250327134817.txt
+-rw-r--r-- 1 semh24 semh24 3584 Mar 27 13:56 20250327135623.txt
+-rw-r--r-- 1 semh24 semh24 3710 Mar 27 13:57 20250327135718.txt
+-rw-r--r-- 1 semh24 semh24 1799 Mar 27 13:58 20250327135852.txt
+./sql
+total 4
+drwxr-xr-x 2 semh24 semh24 4096 Mar 27 12:42 exam
+./sql/exam
+total 64
+-rw-r--r-- 1 semh24 semh24   202 Mar 27 09:11 backup.bash
+-rw-r--r-- 1 semh24 semh24 10475 Mar 27 12:38 backup.sql
+-rw-r--r-- 1 semh24 semh24   293 Mar 27 09:16 country.csv
+-rw-r--r-- 1 semh24 semh24  3604 Mar 27 13:58 ddl.sql
+-rw-r--r-- 1 semh24 semh24  1105 Mar 27 12:40 dml.sql
+-rwxr-xr-x 1 semh24 semh24   492 Mar 27 09:15 download-exam-csv.bash
+-rw-r--r-- 1 semh24 semh24  1767 Mar 27 12:40 insert.sql
+-rw-r--r-- 1 semh24 semh24   204 Mar 27 09:16 miner.csv
+-rw-r--r-- 1 semh24 semh24   221 Mar 27 09:16 miner2mineral.csv
+-rw-r--r-- 1 semh24 semh24   615 Mar 27 09:16 mineral.csv
+-rw-r--r-- 1 semh24 semh24   125 Mar 27 09:16 mineral2country.csv
+-rw-r--r-- 1 semh24 semh24    65 Mar 27 09:11 reset.sql
+-rw-r--r-- 1 semh24 semh24   118 Mar 27 09:11 setup.sql
+-rw-r--r-- 1 semh24 semh24   480 Mar 27 09:11 verify.bash
+./src
+total 4
+-rw-r--r-- 1 semh24 semh24 822 Mar 27 12:53 exam.js
+./doc
+total 28
+-rw-r--r-- 1 semh24 semh24 26820 Mar 27 10:26 er.pdf
+./routes
+total 8
+-rw-r--r-- 1 semh24 semh24 1371 Mar 27 12:53 exam.js
+-rw-r--r-- 1 semh24 semh24  328 Mar 27 09:11 index.js
+./views
+total 20
+-rw-r--r-- 1 semh24 semh24  68 Mar 27 11:12 footer.ejs
+-rw-r--r-- 1 semh24 semh24 348 Mar 27 11:34 header.ejs
+-rw-r--r-- 1 semh24 semh24 139 Mar 27 12:43 index.ejs
+-rw-r--r-- 1 semh24 semh24 292 Mar 27 13:06 search.ejs
+-rw-r--r-- 1 semh24 semh24 592 Mar 27 12:33 visa.ejs
