@@ -140,9 +140,6 @@ router.get("/product/edit/:id", async (req, res) => {
         title: "Edit product balance | eShop",
         edited: false,
     };
-    // if (!data.res) {
-    //     return res.status(404).send('Product not found');
-    // }
 
     data.res = await eshop.getProduct(id);
     res.render("eshop/product/edit", data);

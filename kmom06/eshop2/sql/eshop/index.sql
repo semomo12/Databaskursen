@@ -7,7 +7,7 @@ ALTER TABLE `order` ADD INDEX idx_order_customer_id (`customer_id`);
 
 -- Drop index if exists and then add index to order table on status
 ALTER TABLE `order` DROP INDEX IF EXISTS idx_order_status;
-ALTER TABLE `order` ADD INDEX idx_order_status (`status`);
+ALTER TABLE `order` ADD INDEX idx_order_status (`order_status`);
 
 -- Drop index if exists and then add index to product_category table on product_id
 ALTER TABLE `product_category` DROP INDEX IF EXISTS idx_product_category_product_id;

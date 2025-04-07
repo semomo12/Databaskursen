@@ -1,0 +1,35 @@
+<%- include("../partials/header", {title: title}); %>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Order Details</h1>
+
+    <div class="table-responsive">
+        <table class="table my-4 shadow-sm p-3 bg-white rounded table-hover rounded-3 overflow-hidden w-100">
+            <thead class="thead-light table-info">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Total Products</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (const order of res) { %>
+                <tr>
+                    <td><%= order.order_id %></td>
+                    <td><%= order.product_id %></td>
+                    <td><%= order.product_name%></td>
+                    <td><%= order.total_product %></td>
+                    <td>$<%= order.total_price %></td>
+                </tr>
+                <% }; %>
+            </tbody>
+        </table>
+    </div>
+    <a href="/eshop/order/status/<%= orderId %>" class="btn btn-primary">Place an order</a>
+
+    <a href="/eshop/order/addtocart/<%= orderId %>" class="btn btn-primary">Add a product</a>
+</div>
+
+<%- include("../partials/footer"); %>

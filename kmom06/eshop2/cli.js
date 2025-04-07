@@ -32,19 +32,19 @@ function exitProgram(code) {
 
 function showMenu() {
     console.log("Welcome to the eSHOP");
-    console.log('\nMenu:');
-    console.log('1. About');
-    console.log('2. Log <number>');
-    console.log('3. Product');
-    console.log('4. Shelf');
-    console.log('5. Inv');
-    console.log('6. Inv <str>');
-    console.log('7. Invadd <productid> <shelf> <number>');
-    console.log('8. Invdel <productid> <shelf> <number>');
-    console.log('9. Order <search>.');
-    console.log('10. Picklist <orderid>');
-    console.log('11. Ship <orderid>');
-    console.log('12. Orderstatus <orderid>');
+    console.log('\nmenu:');
+    console.log('1. about');
+    console.log('2. log <number>');
+    console.log('3. product');
+    console.log('4. shelf');
+    console.log('5. inv');
+    console.log('6. inv <str>');
+    console.log('7. invadd <productid> <shelf> <number>');
+    console.log('8. invdel <productid> <shelf> <number>');
+    console.log('9. order <search>.');
+    console.log('10. picklist <orderid>');
+    console.log('11. ship <orderid>');
+    console.log('12. orderstatus <orderid>');
     console.log('\n13. help/menu');
     console.log('14. exit');
     rl.question('\nEnter your choice: ', handleChoice);

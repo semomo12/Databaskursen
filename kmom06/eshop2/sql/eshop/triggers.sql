@@ -33,3 +33,17 @@ BEGIN
 END ;;
 
 DELIMITER ;
+
+
+
+DROP TRIGGER IF EXISTS delete_product_trigger;
+DELIMITER ;;
+CREATE TRIGGER delete_product_trigger
+BEFORE DELETE ON product
+FOR EACH ROW
+BEGIN
+    UPDATE product_category SET deleted = NOW() WHERE product_id = OLD.product_id;
+    UPDATE order_item SET deleted = NOW() WHERE product_id = OLD.product_id;
+    UPDATE warehouse SET deleted = NOW() WHERE product_id = OLD.product_id;
+END;;
+DELIMITER ;

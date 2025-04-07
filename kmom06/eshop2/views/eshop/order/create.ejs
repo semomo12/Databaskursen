@@ -1,0 +1,26 @@
+<%- include("../partials/header", { title: "Create Order" }); %>
+
+<div class="container mt-5">
+    <h2>Create Order</h2>
+    <form action="/eshop/order/create" method="POST">
+        <div class="mb-3">
+            <label for="order_date" class="form-label">Order Date</label>
+            <input type="datetime-local" class="form-control" id="order_date" name="order_date" required>
+        </div>
+        <div class="mb-3">
+            <label for="total_price" class="form-label">Total Price</label>
+            <input type="number" class="form-control" id="total_price" name="total_price" step="0.01" required>
+        </div>
+        <div class="mb-3">
+            <label for="customer_id" class="form-label">Customer ID</label>
+            <input type="number" class="form-control" id="customer_id" name="customer_id" required>
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <input type="text" class="form-control" id="status" name="status" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include("../partials/footer"); %>

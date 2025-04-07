@@ -1,0 +1,39 @@
+<%- include("../partials/header", { title: title }); %>
+
+<h1 class="my-3">Customer List</h1>
+
+<div class="container">
+    <table class="table my-4 shadow-sm p-3 bg-white rounded table-hover rounded-3 overflow-hidden w-100">
+        <thead class="thead-light table-info">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Customer_Id</th>
+                <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const customer of res) { %>
+            <tr>
+                <td><%= customer.firstname %></td>
+                <td><%= customer.lastname %></td>
+                <td><%= customer.email %></td>
+                <td><%= customer.address %></td>
+                <td><%= customer.phone_number %></td>
+                <td><%= customer.customer_id %></td>
+                <td class="text-center">
+                    <a href="/eshop/order/create/<%= customer.customer_id %>"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            <% }; %>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a href="/eshop/customer" class="btn btn-primary btn-sm my-4" style="max-width: 150px">Back to Customers</a>
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>

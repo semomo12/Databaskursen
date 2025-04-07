@@ -1,7 +1,7 @@
 use eshop;
 
 DROP FUNCTION IF EXISTS f_order_status;
-DELIMITER //
+DELIMITER ;;
 
 CREATE FUNCTION f_order_status(
     created_at DATETIME,
@@ -36,5 +36,5 @@ BEGIN
 
     SET status = 'Created';
     RETURN status;
-END//
+END ;;
 DELIMITER ;

@@ -510,3 +510,114 @@ BEGIN
         order_id = p_order_id;
 END;;
 DELIMITER ;
+
+
+
+
+
+
+DROP PROCEDURE IF EXISTS p_show_all_customers;
+DELIMITER ;;
+
+CREATE PROCEDURE p_show_all_customers()
+BEGIN
+    SELECT * FROM `customer`;
+END ;;
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS p_show_orders_with_totals;
+DELIMITER ;;
+CREATE PROCEDURE p_show_orders_with_totals()
+BEGIN
+    SELECT
+        o.order_id,
+        o.order_date,
+        o.customer_id,
+        o.order_status,
+        COALESCE(SUM(oi.item_count), 0) AS total_products,
+        COALESCE(SUM(oi.price * oi.item_count), 0) AS total_combined_price
+    FROM
+        `order` o
+    LEFT JOIN
+        `order_item` oi ON o.order_id = oi.order_id
+    GROUP BY
+        o.order_id;
+END ;;
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS p_show_customer_by_id;
+DELIMITER ;;
+CREATE PROCEDURE p_show_customer_by_id(IN p_customer_id INT)
+BEGIN
+    SELECT * FROM `customer` WHERE `customer_id` = p_customer_id;
+END;;
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS p_insert_order;
+DELIMITER ;;
+CREATE PROCEDURE p_insert_order(
+    IN p_order_date DATETIME,
+    IN p_total_price DECIMAL(10,2),
+    IN p_customer_id INT,
+    IN p_status VARCHAR(20)
+)
+BEGIN
+    INSERT INTO `order` (order_date, total_price, customer_id, order_status, created, updated)
+    VALUES (p_order_date, p_total_price, p_customer_id, p_status, NOW(), NOW());
+END ;;
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS p_show_order_details;
+DELIMITER ;;
+CREATE PROCEDURE p_show_order_details(IN p_order_id INT)
+BEGIN
+    SELECT oi.order_id, oi.product_id, p.product_name,
+           oi.item_count AS total_product, oi.price AS total_price
+    FROM `order_item` oi
+    JOIN `product` p ON oi.product_id = p.product_id
+    WHERE oi.order_id = p_order_id;
+END ;;
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS p_change_order_status;
+DELIMITER ;;
+CREATE PROCEDURE p_change_order_status(in orderid int)
+BEGIN
+    UPDATE `order`
+    SET `order_status` = 'ordered'
+    WHERE `order_id` = orderid;
+END ;;
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS p_soft_delete_order;
+DELIMITER ;;
+CREATE PROCEDURE p_soft_delete_order(IN p_order_id INT)
+BEGIN
+    UPDATE `order`
+    SET `order_status` = 'deleted', `deleted` = NOW()
+    WHERE `order_id` = p_order_id;
+END ;;
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS p_get_products_by_category;
+DELIMITER ;;
+CREATE PROCEDURE p_get_products_by_category(
+    IN category_id INT
+)
+BEGIN
+    SELECT p.product_name, p.price, p.stock_quantity, p.description
+    FROM product p
+    JOIN product_category pc ON p.product_id = pc.product_id
+    WHERE pc.category_id = category_id;
+END ;;
+DELIMITER ;

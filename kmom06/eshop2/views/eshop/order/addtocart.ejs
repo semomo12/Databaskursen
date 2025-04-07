@@ -1,0 +1,40 @@
+<%- include("../partials/header"); %>
+
+<h1 class="my-3">Products list</h1>
+<h3 class="my-3">OrderId: <%= orderId %></h3>
+<table class="table my-4 shadow-sm p-3 bg-white rounded table-hover rounded-3 overflow-hidden">
+    <thead class="thead-light table-info">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody >
+        <% for (const row of res) { %>
+        <tr>
+            <td><%= row.product_name %></td>
+            <td><%= row.description %></td>
+            <td ><%= row.price %></td>
+            <td ><%= row.stock_quantity %></td>
+            <td>
+                <form action="/eshop/order/show/create/<%= orderId %>" method="post">
+                    <input type="hidden" name="order_id" value="<%= orderId %>">
+                    <input type="hidden" name="product_id" value="<%= row.product_id %>">
+                    <input type="hidden" name="price" value="<%= row.price %>">
+                    <input type="number" name="quantity" class="form-control" min="1" max="<%= row.stock %>" value="1">
+            </td>
+            <td class="text-center">
+                    <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+                </form>
+
+            </td>
+        </tr>
+        <% }; %>
+    </tbody>
+</table>
+
+<%- include("../partials/footer"); %>
