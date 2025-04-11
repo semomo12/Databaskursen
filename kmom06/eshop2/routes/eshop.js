@@ -5,6 +5,7 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const eshop = require("../src/eshop.js");
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/index", (req, res) => {
@@ -140,9 +141,6 @@ router.get("/product/edit/:id", async (req, res) => {
         title: "Edit product balance | eShop",
         edited: false,
     };
-    // if (!data.res) {
-    //     return res.status(404).send('Product not found');
-    // }
 
     data.res = await eshop.getProduct(id);
     res.render("eshop/product/edit", data);
@@ -211,19 +209,23 @@ router.post("/product/delete", urlencodedParser, async (req, res) => {
 });
 
 
-
-////////////////////////777
-
-
 router.get("/order", async (req, res) => {
+    const orderId = req.params.order_id;
     let data = {
         title: "Order | eShop",
     };
 
-    data.res = await eshop.getOrders();
+    let result = await eshop.getOrders(orderId);
+
+    data.res = result.map(order => ({
+        ...order,
+        order_date: eshop.formatDate(new Date(order.order_date)),
+    }));
     console.log(data.res);
+
     res.render("eshop/order/order", data);
 });
+
 
 router.get("/customer", async (req, res) => {
     let data = {
@@ -237,16 +239,14 @@ router.get("/customer", async (req, res) => {
 
 
 router.get("/show/pro/:customer_id", async (req, res) => {
-    const customerId = req.params.customer_id; // Retrieve customer_id from route parameter
+    const customerId = req.params.customer_id;
 
     try {
         let data = {
             title: "Show | eShop",
         };
 
-        // Your logic to fetch customer details using the customerId
-        // For example:
-        data.res = await eshop.getCustomerById(customerId); // Assuming you have a Customer model
+        data.res = await eshop.getCustomerById(customerId);
         res.render("eshop/customer/customerinfo", data);
     } catch (error) {
         console.error("Error fetching customer details:", error);
@@ -257,21 +257,17 @@ router.get("/show/pro/:customer_id", async (req, res) => {
 
 router.get('/order/create/:id', async (req, res) => {
     try {
-        // Extract data from the request body
-        const CustomerID  = req.params.id; // Use req.params
+        const CustomerID  = req.params.id;
 
-        //to get the  CustomerID from the URL parameter
         const date = new Date();
         const formattedDate = eshop.formatDate(date);
 
         const status = "Created";
         const TotalPrice = 0;
 
-        // Call function to create the order in the database
         await eshop.createOrder(formattedDate, TotalPrice,  CustomerID, status);
 
-        // Redirect to a success page or render a success message
-        res.redirect('/eshop/order'); // Corrected the URL for redirect
+        res.redirect('/eshop/order');
     } catch (error) {
         console.error("Error creating order:", error);
         res.status(500).send("Internal Server Error");
@@ -286,12 +282,12 @@ router.get("/order/show/:order_id", async (req, res) => {
 
         const data = {
             title: "Add product | eShop",
-            orderId: orderId // Include orderId in the data object
+            orderId: orderId
         };
 
-        data.res = await eshop.getProductDetails(orderId); // Assuming you have a
-        // function to fetch order details
-        res.render("eshop/order/addproduct", data); // Pass data object to render function
+        data.res = await eshop.getProductDetails(orderId);
+
+        res.render("eshop/order/addproduct", data);
     } catch (error) {
         console.error("Error fetching order details:", error);
         res.status(500).send("Internal Server Error");
@@ -308,7 +304,7 @@ router.get("/order/addtocart/:order_id", async (req, res) => {
             orderId: orderId
         };
 
-        data.res = await eshop.getProducts(); // Assuming you have a function to fetch products
+        data.res = await eshop.getProducts();
         res.render("eshop/order/addtocart", data);
     } catch (error) {
         console.error("Error fetching order details:", error);
@@ -371,18 +367,6 @@ router.get('/products/under/:category_id', async (req, res) => {
 
     res.render('eshop/category/categoryproduct', data);
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;  //exportera router

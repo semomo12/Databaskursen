@@ -503,16 +503,13 @@ BEGIN
         updated,
         deleted,
         shipped,
-        f_order_status(created, updated, deleted, order_date, shipped) AS calculated_status
+        f_order_status(created, updated, deleted, order_date, shipped) AS order_status
     FROM
         `order`
     WHERE
         order_id = p_order_id;
 END;;
 DELIMITER ;
-
-
-
 
 
 
@@ -579,7 +576,7 @@ DELIMITER ;;
 CREATE PROCEDURE p_show_order_details(IN p_order_id INT)
 BEGIN
     SELECT oi.order_id, oi.product_id, p.product_name,
-           oi.item_count AS total_product, oi.price AS total_price
+           oi.item_count AS total_product, oi.price AS total_combined_price
     FROM `order_item` oi
     JOIN `product` p ON oi.product_id = p.product_id
     WHERE oi.order_id = p_order_id;
@@ -592,7 +589,7 @@ DELIMITER ;;
 CREATE PROCEDURE p_change_order_status(in orderid int)
 BEGIN
     UPDATE `order`
-    SET `order_status` = 'ordered'
+    SET `order_status` = 'Ordered'
     WHERE `order_id` = orderid;
 END ;;
 DELIMITER ;
@@ -603,7 +600,7 @@ DELIMITER ;;
 CREATE PROCEDURE p_soft_delete_order(IN p_order_id INT)
 BEGIN
     UPDATE `order`
-    SET `order_status` = 'deleted', `deleted` = NOW()
+    SET `order_status` = 'deleted', `Deleted` = NOW()
     WHERE `order_id` = p_order_id;
 END ;;
 DELIMITER ;

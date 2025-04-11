@@ -83,7 +83,7 @@ CREATE TABLE `order` (
     customer_id INT NOT NULL,
     order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     total_price DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-    order_status VARCHAR(50) NOT NULL DEFAULT 'väntar', -- väntar, bearbetas, slutförd, avbruten
+    order_status VARCHAR(50) DEFAULT NULL,
     created datetime DEFAULT current_timestamp(),
     updated datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     deleted datetime DEFAULT NULL,

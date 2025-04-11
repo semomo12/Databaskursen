@@ -21,6 +21,7 @@ connection.connect((err) => {
     showMenu();
 });
 
+
 function exitProgram(code) {
     code = code || 0;
     connection.end();
@@ -29,10 +30,28 @@ function exitProgram(code) {
     process.exit(code);
 }
 
+function isInvalidArgs(args, expectedCount) {
+    if (args.length < expectedCount) {
+        console.log('!Please enter a valid command!');
+        showMenu();
+        return true;
+    }
+
+    for (let i = 1; i < args.length; i++) {
+        if (isNaN(parseInt(args[i]))) {
+            console.log('!Arguments after command must be numbers!');
+            showMenu();
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
 function showMenu() {
-    console.log("Welcome to the eSHOP");
-    console.log('\nmenu:');
+    console.log("\nWelcome to the eSHOP!");
+    console.log('\nMenu:');
     console.log('1. about');
     console.log('2. log <number>');
     console.log('3. product');
@@ -41,7 +60,7 @@ function showMenu() {
     console.log('6. inv <str>');
     console.log('7. invadd <productid> <shelf> <number>');
     console.log('8. invdel <productid> <shelf> <number>');
-    console.log('9. order <search>.');
+    console.log('9. order <searchID>.');
     console.log('10. picklist <orderid>');
     console.log('11. ship <orderid>');
     console.log('12. orderstatus <orderid>');
@@ -49,6 +68,7 @@ function showMenu() {
     console.log('14. exit');
     rl.question('\nEnter your choice: ', handleChoice);
 }
+
 
 
 function handleChoice(choice) {
@@ -64,13 +84,13 @@ function handleChoice(choice) {
 
     switch (choice) {
         case 'about':
-            log="About: This program is created by Seyed Mostafa Mohseni";
+            log="About: This program is created by Seyed Mostafa Mohseni!";
             console.log(log);
             showMenu();
             break;
         case 'log':
+            if (isInvalidArgs(args, 2) || isNaN(parseInt(args[1]))) {break;}
             logNumber = parseInt(args[1]);
-
             displayLog(logNumber);
             break;
         case 'product':
@@ -89,8 +109,8 @@ function handleChoice(choice) {
             }
             break;
         case 'invadd':
+            if (isInvalidArgs(args, 4)) {break;}
             addArgs = args.slice(1);
-
             addProductToStock(addArgs);
             break;
         case 'invdel':
@@ -108,14 +128,17 @@ function handleChoice(choice) {
             }
             break;
         case 'picklist':
+            if (isInvalidArgs(args, 2)) {break;}
             id = args.slice(1);
             pickList(id);
             break;
         case 'ship':
+            if (isInvalidArgs(args, 2)) {break;}
             id = args.slice(1);
             updateOrderStatusToShipped(id);
             break;
         case 'orderstatus':
+            if (isInvalidArgs(args, 2)) {break;}
             id = args.slice(1);
             getOrderStatus(id);
             break;

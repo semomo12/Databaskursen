@@ -136,7 +136,6 @@ async function deleteProduct(id) {
 
 
 async function addEventLog(id, eventDescription, eventDate) {
-
     const eventInstanceId = await generateEventID(id);
 
     const sql = 'CALL p_add_log(?, ?, ?)';
@@ -157,7 +156,6 @@ function getProductIDByProductName(productName) {
             if (error) {
                 reject(error);
             } else {
-                // If results are found, resolve with product_id, otherwise resolve with null
                 const productId = results.length > 0 ? results[0].product_id : null;
 
                 resolve(productId);
@@ -176,7 +174,7 @@ async function getCustomers() {
     return res[0];
 }
 
-// get all orders
+//get all orders
 async function getOrders() {
     let sql = `CALL p_show_orders_with_totals();`;
 
@@ -184,6 +182,7 @@ async function getOrders() {
 
     return res[0];
 }
+
 
 async function getCustomerById(customerId) {
     const sql = 'CALL p_show_customer_by_id(?)';
@@ -210,10 +209,10 @@ async function getProductDetails(customerId) {
     return res[0];
 }
 
-async function insertOrderItem(orderId, productId, price, item_count) {
+async function insertOrderItem(orderId, productId, price, itemCount) {
     const result = await db.query(
         'INSERT INTO order_item (order_id, product_id, price, item_count) VALUES (?, ?, ?, ?)',
-        [orderId, productId, price, item_count]
+        [orderId, productId, price, itemCount]
     );
 
     return result;

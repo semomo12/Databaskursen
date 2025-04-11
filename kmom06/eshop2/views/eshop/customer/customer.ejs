@@ -1,24 +1,29 @@
 <%- include("../partials/header", { title: title }); %>
 
-<div class="container">
-    <h1 class="mt-5 mb-4">Customer List</h1>
-
+<div class="container my-3">
     <div class="table-responsive">
+        <nav class="custom-heading"><h1 class="mt-5 mb-4">Customers</h1></nav>
+
         <table class="table my-4 shadow-sm p-3 bg-white rounded table-hover rounded-3 overflow-hidden w-100">
             <thead class="thead-light table-info">
                 <tr>
+                    <th scope="col">Customer Id</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Create order</th>
                 </tr>
             </thead>
             <tbody>
                 <% for (const row of res) { %>
                 <tr>
+                    <td><%= row.customer_id %></td>
                     <td><%= row.firstname %></td>
                     <td><%= row.lastname %></td>
-                    <td><%= row.email %></td>
+                    <td><%= row.address %></td>
+                    <td><%= row.phone_number %></td>
+
                     <td class="right">
                         <a href="/eshop/show/pro/<%= row.customer_id %>"><i class="fa fa-list-ul" aria-hidden="true"></i> </a>
                     </td>
