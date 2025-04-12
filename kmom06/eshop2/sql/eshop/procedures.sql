@@ -600,7 +600,7 @@ DELIMITER ;;
 CREATE PROCEDURE p_soft_delete_order(IN p_order_id INT)
 BEGIN
     UPDATE `order`
-    SET `order_status` = 'deleted', `Deleted` = NOW()
+    SET `order_status` = 'Deleted', `Deleted` = NOW()
     WHERE `order_id` = p_order_id;
 END ;;
 DELIMITER ;
