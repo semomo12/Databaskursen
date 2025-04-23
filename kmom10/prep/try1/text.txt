@@ -69,3 +69,6 @@ mos@bth.se
 
 npm run eslint
 npm run eslint:fix
+
+
+25 poäng
